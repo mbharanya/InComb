@@ -1,0 +1,23 @@
+<section class="news-short">
+	<!--
+	<a href="{{ 'news' | url:{ id: news.id } }}" title="{{ news.title }}">
+		<img ng-if="news.imageUrl" ng-src="{{ news.imageUrl }}" class="img" />
+	</a>
+-->
+	<div class="news-content">
+		<h4>
+			<a href="{{ 'category' | url:{name: ( news.category.nameKey | translate | lowercase )} }}" title="{{ news.category.nameKey | translate }}">
+				{{ news.category.nameKey | translate }}
+			</a>
+			·
+			<a href="{{ 'provider' | url:{name: news.provider.name} }}" title="{{ news.provider.name }}">{{ news.provider.name }}</a>
+
+			<a href="{{ 'news' | url:{ id: news.id } }}" title="{{ news.title }}">
+				<span class="time" am-time-ago="news.publishDate"></span>
+			</a>
+		</h4>
+		<a href="{{ 'news' | url:{ id: news.id } }}" title="{{ news.title }}">
+			<h3>{{ news.title }}</h3>
+		</a>
+	</div>
+</section>

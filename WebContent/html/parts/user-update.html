@@ -1,0 +1,39 @@
+<form ng-submit="updateform.$valid && update()" ng-controller="userSettingsCtrl" class="update-form" name="updateform" novalidate>
+	<fieldset>
+		<label for="email">{{ 'fields.email' | translate }}</label>
+		<input type="email" id="email" ng-model="updateUser.email" required />
+		<label for="email" class="error" validate-error="email"></label>
+
+		<label for="username">{{ 'fields.username' | translate }}</label>
+		<input type="text" id="username" ng-model="updateUser.username" required />
+		<label for="username" class="error" validate-error="username"></label>
+
+		<label for="displayname">{{ 'fields.displayName' | translate }}</label>
+		<input type="text" id="displayname" ng-model="updateUser.displayName" required />
+		<label for="displayname" class="error" validate-error="displayName"></label>
+
+		<label for="password">{{ 'fields.password' | translate }}</label>
+		<input type="password" id="password" ng-model="updateUser.password" />
+		<label for="password" class="error" validate-error="password"></label>
+
+		<label for="passwordretype">{{ 'fields.passwordRetype' | translate }}</label>
+		<input type="password" id="passwordretype" ng-model="updateUser.passwordRetype" validate-retype="updateUser.password" />
+
+		<label for="privateprofile">{{ 'fields.privateProfile' | translate }}</label>
+		<div class="checkbox">
+			<input type="checkbox" id="privateprofile" ng-model="updateUser.privateProfile" />
+			<label for="privateprofile">{{ 'fields.privateProfile' | translate }}</label>
+		</div>
+
+		<input type="submit" value="{{ 'actions.save' | translate }}" />
+		<span class="success-info" ng-show="success">
+			<span class="icon mini">
+				<span class="entypo-check"></span>
+			</span>
+			<span class="text">{{ successMsg | translate }}</span>
+		</span>
+
+		<!--<input type="button" name="delete-user" class="delete-user-btn" ng-click="delete()" value="{{ 'actions.deleteUser' | translate }}" />
+		<label for="delete-user" class="error" validate-error="delete-user"></label>-->
+	</fieldset>
+</form>

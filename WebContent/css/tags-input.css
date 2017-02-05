@@ -1,0 +1,78 @@
+tags-input {
+	display: block;
+	margin: 0px 0px 30px 0px;
+}
+
+tags-input *, tags-input *:before, tags-input *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+tags-input .host {
+	position: relative;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 100%;
+}
+
+tags-input .host:active {
+	outline: none;
+}
+
+tags-input .tags {
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	padding: 10px;
+	overflow: hidden;
+	word-wrap: break-word;
+	cursor: text;
+	background: rgba(255, 255, 255, 0.75);
+	height: 100%;
+}
+
+tags-input .tags .tag-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+tags-input .tags .tag-item {
+	margin: 2px;
+	padding: 6px 10px;
+	display: inline-block;
+	float: left;
+	line-height: 25px;
+	background: rgba(240, 240, 240, 0.43);
+}
+
+tags-input .tags .tag-item .remove-button {
+	margin: 0 0 0 5px;
+	padding: 0;
+	cursor: pointer;
+	border: none;
+	vertical-align: middle;
+	font: bold 16px Arial, sans-serif;
+	color: #585858;
+}
+
+tags-input .tags .input {
+	border: 0;
+	outline: none;
+	margin: 0px;
+	padding: 8px 10px;
+	background: transparent;
+	float: left;
+}
+
+tags-input .tags .input.invalid-tag {
+	color: red;
+}
+
+tags-input .tags .input::-ms-clear {
+	display: none;
+}
+
+tags-input.ng-invalid .tags {
+	background: rgba(255, 0, 0, 0.1);
+}

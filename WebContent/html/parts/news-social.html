@@ -1,0 +1,85 @@
+<div ng-init="commentsVisible = commentsVisible || false">
+	<div class="news-social" ng-class="{'visible': newsSocialVisible || commentsVisible}">
+		<table>
+			<tr ng-if="user">
+				<td>
+					<!-- Ins -->
+					<a href="#" ng-click="news.in()" class="no-line" title="{{ 'news.social.in' | translate }}">
+						<span class="icon mini">
+							<span class="entypo-thumbs-up"></span>
+						</span>
+						<p class="icon-text mini">{{ news.voteAmounts.insAmount }}
+							<span class="long">- {{ 'news.social.in' | translate }}</span>
+						</p>
+					</a>
+				</td>
+				<td>
+					<!-- Combs -->
+					<a href="#" ng-click="news.comb()" class="no-line" title="{{ 'news.social.comb' | translate }}">
+						<span class="icon mini">
+							<span class="entypo-thumbs-down"></span>
+						</span>
+						<p class="icon-text mini">{{ news.voteAmounts.combsAmount }}
+							<span class="long">- {{ 'news.social.comb' | translate }}</span>
+						</p>
+					</a>
+				</td>
+				<td>
+					<div>
+						<a href="#" ng-click="news.combItem ? news.outOfMyComb() : news.inMyComb()" class="no-line" title="{{ (news.combItem ? 'news.social.outOfMyComb' : 'news.social.inMyComb') | translate }}">
+							<span class="icon mini">
+								<span ng-class="{'entypo-cancel': news.combItem, 'entypo-layout': !news.combItem}"></span>
+							</span>
+							<p ng-show="!news.combItem" class="icon-text mini"><span class="long">{{ 'news.social.inMyComb' | translate }}</span></p>
+							<p ng-show="news.combItem" class="icon-text mini"><span class="long">{{ 'news.social.outOfMyComb' | translate }}</span></p>
+						</a>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<!-- Comments -->
+					<a class="no-line" href="#" ng-click="commentsVisible = !commentsVisible" title="{{ 'news.social.comments' | translate }}" ng-class="{'disabled': news.comments.length == 0 && !user}">
+						<span class="icon mini">
+							<span class="entypo-chat"></span>
+						</span>
+						<p class="icon-text mini">{{ news.comments.length }}
+							<span class="long">{{ 'news.social.comments' | translate }}</span>
+						</p>
+					</a>
+				</td>
+				<td>
+					<a href="https://twitter.com/intent/tweet?text={{ news.title | urlencode }}&url={{ news.link | urlencode }}" class="icon mini" title="{{ 'news.social.twitter' | translate }}" target="_blank" rel="external">
+						<span class="entypo-twitter"></span>
+					</a>
+					<a href="https://www.facebook.com/sharer/sharer.php?u={{ news.link | urlencode }}" class="icon mini" title="{{ 'news.social.facebook' | translate }}" target="_blank" rel="external">
+						<span class="entypo-facebook"></span>
+					</a>
+					<a href="https://plus.google.com/share?url={{ news.link | urlencode }}" class="icon mini" title="{{ 'news.social.googleplus' | translate }}" target="_blank" rel="external">
+						<span class="entypo-gplus"></span>
+					</a>
+					<p class="icon-text mini"><span class="long">{{ 'news.social.share' | translate }}</span></p>
+				</td>
+				<td>
+					<a href="{{ 'provider' | url:{name: news.provider.name} }}" title="{{ news.provider.name }}" class="no-line">
+						<img ng-src="{{ news.provider.imagePath }}" alt="{{ news.provider.title }}" class="provider-img" />
+					</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="comments" ng-class="{'visible': commentsVisible}">
+		<div class="comment" ng-repeat="comment in news.comments">
+			<div class="comment-header">
+				<a href="{{ 'profile' | url:{ username: comment.user.username } }}" class="comment-username no-line">{{ comment.user.username }}</a>
+				<span class="comment-date" am-time-ago="comment.commentDate"></span>
+			</div>
+			<p class="comment-text">{{ comment.comment }}</p>
+		</div>
+		<form name="commentform" ng-submit="commentform.$valid && news.addComment()" ng-if="user" novalidate>
+			<textarea id="new-comment-textarea-{{ news.id }}" ng-model="news.newComment.comment" required></textarea>
+			<label for="new-comment-textarea-{{ news.id }}" validate-error="comment-{{ news.id }}"></label>
+			<input type="submit" value="{{ 'actions.addMyHoney' | translate }}"/>
+		</form>
+	</div>
+</div>

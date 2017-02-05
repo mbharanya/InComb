@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation=" http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <context:property-placeholder/>
+    <context:annotation-config/>
+    <bean class="org.springframework.web.context.support.ServletContextPropertyPlaceholderConfigurer"/>
+    <bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer"/>
+    <bean class="com.incomb.server.cxf.DBConnectionResponseInterceptor" id="dbConnectionResponseInterceptor" />
+    <jaxrs:server id="services" address="/">
+        <jaxrs:serviceBeans>
+        	<bean class="com.incomb.server.services.users.UserService" />
+            <bean class="com.incomb.server.services.users.UsersService" />
+            <bean class="com.incomb.server.services.users.LoggedInUserService" />
+            <bean class="com.incomb.server.services.categories.CategoriesService" />
+            <bean class="com.incomb.server.services.providers.ProvidersService" />
+            <bean class="com.incomb.server.services.news.NewsService" />
+            <bean class="com.incomb.server.services.news.NewsRecordService" />
+            <bean class="com.incomb.server.services.news.CommentsService" />
+            <bean class="com.incomb.server.services.news.VoteService" />
+            <bean class="com.incomb.server.services.users.tagpreferences.TagPreferencesService" />
+            <bean class="com.incomb.server.services.users.tagpreferences.TagPreferenceService" />
+            <bean class="com.incomb.server.services.users.categorypreferences.CategoryPreferenceService" />
+            <bean class="com.incomb.server.services.users.categorypreferences.CategoryPreferencesService" />
+            <bean class="com.incomb.server.services.users.combItems.CombItemService" />
+            <bean class="com.incomb.server.services.users.combItems.CombItemsService" />
+            <bean class="com.incomb.server.services.users.flyWiths.FlyWithService" />
+            <bean class="com.incomb.server.services.users.contentVotes.ContentVotesService" />
+            <bean class="com.incomb.server.services.users.comments.CommentsService" />
+            <bean class="com.incomb.server.services.users.locales.UserLocalesService" />
+            <bean class="com.incomb.server.services.users.locales.UserLocaleService" />
+            <bean class="com.incomb.server.services.translations.TranslationService" />
+            <bean class="com.incomb.server.services.locales.LocalesService" />
+            <bean class="com.incomb.server.services.indexes.IndexService" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" />
+            <bean class="com.incomb.server.cxf.DBConnectionContextProvider" />
+            <bean class="com.incomb.server.cxf.ThrowableMapper" />
+        </jaxrs:providers>
+        <jaxrs:outInterceptors>
+    		<ref bean="dbConnectionResponseInterceptor" />
+ 		</jaxrs:outInterceptors>
+    </jaxrs:server>
+</beans>

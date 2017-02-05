@@ -1,0 +1,51 @@
+<!--
+#
+# COPYRIGHT
+#
+# INTERSYS AG
+# Luzernstrasse 9
+# 4528 Zuchwil
+# SWITZERLAND
+#
+# www.intersys.ch
+# info@intersys.ch
+#
+# tel int + 41 32 625 76 76
+# fax int + 41 32 625 76 70
+#
+# The copyright to the computer program(s) herein
+# is the property of Intersys AG, Switzerland.
+# The program(s) may be used and/or copied only with
+# the written permission of Intersys AG or in accordance with
+# the terms and conditions stipulated in the agreement/contract
+# under which the program(s) have been supplied.
+#
+# Originator : ${user.name}
+#
+#
+# Description: This is the assembly descriptor file for ${pom.artifactId} 
+#    
+#
+# See:         FIXME add reference
+#
+# $Author$
+# $HeadURL$
+# $Revision$
+# $Date$
+#
+#
+-->
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>TEST %d{dd.mm.yy - HH:mm:ss.SSS} %-5level %logger{20} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="debug">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

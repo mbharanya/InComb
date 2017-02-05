@@ -1,0 +1,241 @@
+{
+	"pageTitles": {
+		"appendix": " - InComb",
+		"home": "Startseite",
+		"register": "Registrierung",
+		"login": "Einloggen",
+		"settings": "Einstellungen",
+		"logout": "Abmelden",
+		"tagPreferences": "Themen",
+		"categoryPreferences": "Kategorien",
+		"userLocaleSettings": "Sprachen",
+		"myComb": "Meine Comb",
+		"read": "Nachrichten lesen",
+		"404": "Seite nicht gefunden - 404",
+		"500": "Es ist ein Problem aufgetreten - 500"
+	},
+
+	"modules": {
+		"news": "Nachrichten"
+	},
+
+	"categories": {
+		"news": {
+			"switzerland": "Schweiz",
+			"worldNews": "Ausland",
+			"sport": "Sport",
+			"economy": "Wirtschaft",
+			"digital": "Digital",
+			"health": "Gesundheit"
+		}
+	},
+
+	"userprofile": {
+		"yes": "Ja",
+		"no": "Nein",
+		"infoAbout": "Infos über",
+		"userActive": "User aktiv",
+		"followingBees": "Folgende Bees fliegen mit",
+		"beesFollowing":"fliegt mit folgenden Bees",
+		"recentActivities":"s kürzliche Aktivitäten",
+		"usersins": "s Ins",
+		"userscombs": "s Combs",
+		"userscomments": "s Kommentare",
+		"ins": "Ins",
+		"combs": "Combs",
+		"comments": "Kommentare",
+		"amountWithFlyings": "fliegen dem Bee nach",
+		"amountFlyWiths": "fliegt der Bee nach",
+		"privateProfileInfo": "Diese Bee möchte sein Profil nicht öffentlich zugänglich machen, deshalb können keine weiteren Informationen über sie angezeigt werden."
+	},
+
+	"actions": {
+		"login": "Einloggen",
+		"register": "Registrieren",
+		"save": "Speichern",
+		"addMyHoney": "add my honey!",
+		"deleteUser": "Account löschen",
+		"deleteUserConfirm": "Bist du sicher, dass du deinen Account löschen willst?"
+	},
+
+	"fields": {
+		"username": "Benutzername",
+		"password": "Passwort",
+		"passwordRetype": "Passwort wiederholen",
+		"email": "E-Mail",
+		"displayName": "Name",
+		"privateProfile": "Privates Profil"
+	},
+
+	"validation":{
+		"user": {
+			"email": {
+				"invalid": "Diese E-Mail ist ungültig",
+				"required": "Es wird eine E-Mail benötigt",
+				"exists": "Diese E-Mail existiert bereits"
+			},
+			"username": {
+				"invalid": "Dieser Benutzername ist ungültig",
+				"required": "Es wird ein Benutzername benötigt",
+				"exists": "Dieser Benutzername existiert bereits"
+			},
+			"displayName": {
+				"invalid": "Dieser Name ist ungültig",
+				"required": "Es wird ein Name benötigt"
+			},
+			"password": {
+				"invalid": "Dieses Passwort ist ungültig",
+				"required": "Es wird ein Passwort benötigt"
+			}
+		},
+		"comment": {
+			"userId": {
+				"required": "Es wird eine userId benötigt",
+				"invalid": "Diese userId ist ungültig"
+			},
+			"contentId": {
+				"required": "Es wird ein contentId benötigt",
+				"invalid": "Diese contentId ist ungültig"
+			},
+			"comment": {
+				"required": "Es wird ein comment benötigt",
+				"invalid": "Dieser comment ist ungültig"
+			}
+		},
+		"votes": {
+			"userId": {
+				"required": "Es wird eine userId benötigt",
+				"invalid": "Diese userId ist ungültig"
+			},
+			"contentId": {
+				"required": "Es wird ein contentId benötigt",
+				"invalid": "Diese contentId ist ungültig"
+			},
+			"up": {
+				"required": "Es wird ein up benötigt",
+				"invalid": "Dieses up ist ungültig"
+			}
+		}
+	},
+
+	"errors": {
+		"notAuthorized": "Benutzer ist nicht berechtigt die Aktion durchzuführen",
+		"login": {
+			"wrongCredentials": "Benutzername oder Passwort ist falsch."
+		},
+		"404": {
+			"info": "Die gewünschte Seite konnte leider nicht gefunden werden. Möglicherweise wurde diese gelöscht oder umbenannt. Wahrscheinlich wirst du aber deinen gesuchten Inhalt mit Hilfe der Suche oben wieder finden."
+		},
+		"500": {
+			"info": "Leider ist bei der Ausführung ein unerwarteter Fehler aufgetreten. Bitte versuche es in einigen Minuten erneut. Sollte das Problem dann weiterhin auftreten, dann bitte informiere uns über info@incomb.com."
+		}
+	},
+
+	"responses":{
+		"comments": {
+			"addedComment": "Kommentar erfolgreich hinzugefügt",
+			"errors":{
+				"contentId":{
+					"invalid": "ContentId ist ungültig"
+				}
+			}
+		},
+		"users":{
+			"notModified": "Es mussten keine Änderungen vorgenommen werden.",
+			"updated": "Benutzer erfolgreich bearbeitet.",
+			"deleted": "Benutzer erfolgreich gelöscht.",
+			"errors": {
+				"notFound": "Benutzer konnte nicht gefunden werden."
+			}
+		},
+		"votes":{
+			"errors": {
+				"contentId":{
+					"invalid": "ContentId ist ungültig"
+				}
+			}
+		}
+	},
+
+	"news": {
+		"readMore": "Mehr lesen",
+		"noResults": "Für die angegebenen Kriterien konnten leider keine Nachrichten gefunden werden.",
+		"published": "veröffentlicht",
+		"providerWebsite": "Zur Webseite der Nachrichten-Quelle.",
+		"showMoreSimilarNews": "Mehr ähnliche Nachrichten anzeigen.",
+		"hideMoreSimilarNews": "Weniger ähnliche Nachrichten anzeigen.",
+		"social": {
+			"share": "Teilen",
+			"twitter": "Auf Twitter teilen",
+			"facebook": "Auf Facebook teilen",
+			"googleplus": "Auf Google+ teilen",
+			"inMyComb": "In meine Comb",
+			"outOfMyComb": "Aus meiner Comb entfernen",
+			"in": "Ein In geben",
+			"comb": "Ein Comb geben",
+			"comments": "Kommentare"
+		}
+	},
+
+	"comb": {
+		"noResults": "In deiner Comb sind keine Nachrichten (mehr) vorhanden."
+	},
+
+	"settings": {
+		"addTag": "Tag hinzufügen",
+		"tagsInfo": "Hier kannst du beliebige Themen eintragen, die dich stark interessieren. Es werden dir dann mehr Nachrichten zu diesen Themen angezeigt. Wenn du keine Themen angibst, werden wir keine Filterung der Nachrichten machen können.",
+		"categoriesInfo": "Gib hier an wie stark Nachrichten aus den Kategorien angezeigt werden sollen.",
+		"userLocalesInfo": "Es werden dir nur Nachrichten für die ausgewählten Sprachen angezeigt."
+	},
+
+	"search": {
+		"type": {
+			"users": "Bees",
+			"categories": "Kategorien",
+			"providers": "Nachrichten-Quellen",
+			"news": "Nachrichten"
+		},
+		"placeholder": "Nach Nachrichten, Bees, Kategorien, ... suchen",
+		"loadMore": "Mehr Resultate laden ..."
+	},
+
+	"filter": {
+		"sortorder": "Sortierung",
+		"relevance": "Relevanz",
+		"provider": "Anbieter",
+		"publishDate": "Veröffentlichungsdatum",
+		"title": "Titel",
+		"category": "Kategorie",
+		"comments": "Kommentare",
+		"ins": "Ins",
+		"timespan": "Zeitraum",
+		"source": "Quellen",
+		"personalized": "Personalisiert",
+		"bees": "Bees",
+		"all": "-- Alle Nachrichten --",
+		"dateFormat": "jjjj-mm-dd"
+	},
+
+	"flyWith": {
+		"flyWith": "Mitfliegen",
+		"flyAway": "Wegfliegen"
+	},
+
+	"locales": {
+		"de": "Deutsch",
+		"en": "Englisch"
+	},
+
+	"guardianParser": {
+		"ticker": "Bei diesem Beitrag handelt es sich möglicher weise um ein Live Ticker. Klicke auf den folgenden Link um diesen zu öffnen."
+	},
+	
+	"registerText": {
+		"marketingText": "Registriere dich gleich für InComb und erhalte Zugriff auf erweiterte Funktionen. Du kannst Nachrichten kommentieren, bewerten und mit anderen Benutzern folgen (mitfliegen). Auch ist es möglich die Aktionen deiner Freunde auf Schritt und Tritt zu verfolgen und Nachrichten fürs später lesen zu speichern (in my comb).",
+		"advantagesTitel": "Deine Vorteile",
+		"advantage1": "Du bestimmst was dich interessiert",
+		"advantage2": "Erhalte nur News in den Sprachen die du sprichst.",
+		"advantage3": "Suche schnell nach Nachrichten, Quellen und Benutzern",
+		"advantage4": "Sei immer up to date und verpasse nie mehr die wichtigsten News"
+	}
+}

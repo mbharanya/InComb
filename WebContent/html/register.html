@@ -1,0 +1,41 @@
+<main class="small-content">
+	<h1>{{ 'pageTitles.register' | translate }}</h1>
+	
+	<p>{{ 'registerText.marketingText' | translate }}</p>
+
+	<h2>{{ 'registerText.advantagesTitel' | translate }}</h2>
+
+	<ul>
+		<li>{{ 'registerText.advantage1' | translate }}</li>
+		<li>{{ 'registerText.advantage2' | translate }}</li>
+		<li>{{ 'registerText.advantage3' | translate }}</li>
+		<li>{{ 'registerText.advantage4' | translate }}</li>
+	</ul>
+
+	<p><!-- TODO write something?--></p>
+
+	<form name="registerform" ng-submit="registerform.$valid && register()" novalidate>
+		<fieldset>
+			<label for="email">{{ 'fields.email' | translate }}</label>
+			<input type="email" ng-model="data.email" id="email" required autofocus />
+            <label for="email" class="error" validate-error="email"></label>
+
+			<label for="username">{{ 'fields.username' | translate }}</label>
+			<input type="text" ng-model="data.username" id="username" required />
+            <label for="username" class="error" validate-error="username"></label>
+
+			<label for="displayname">{{ 'fields.displayName' | translate }}</label>
+			<input type="text" ng-model="data.displayName" id="displayname" required />
+            <label for="displayname" class="error" validate-error="displayName"></label>
+
+			<label for="password">{{ 'fields.password' | translate }}</label>
+			<input type="password" ng-model="data.password" id="password" required />
+            <label for="password" class="error" validate-error="password"></label>
+
+			<label for="passwordRetype">{{ 'fields.passwordRetype' | translate }}</label>
+			<input type="password" ng-model="data.passwordRetype" id="passwordRetype" validate-retype="data.password" required />
+
+			<input type="submit" value="{{ 'actions.register' | translate }}" />
+		</fieldset>
+	</form>
+</main>

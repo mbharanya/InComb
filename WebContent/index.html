@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html ng-app="incomb">
+	<head>
+		<title>{{ pageTitle }}</title>
+		<meta charset="UTF-8" />
+		<base href="/" />
+
+		<link href="/css/lib/pace.css" rel="stylesheet" type="text/css" />
+		<script src="/js/lib/pace.js" charset="utf-8"></script>
+
+		<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+		<link href="/css/lib/entypo.css" rel="stylesheet" type="text/css" />
+		<link href="/css/lib/normalize.css" rel="stylesheet" type="text/css" />
+		<link href="/css/base.css" rel="stylesheet" type="text/css" />
+		<link href="/css/categories.css" rel="stylesheet" type="text/css" />
+		<link href="/css/news.css" rel="stylesheet" type="text/css" />
+		<link href="/css/special.css" rel="stylesheet" type="text/css" />
+		<link href="/css/profile.css" rel="stylesheet" type="text/css" />
+		<link href="/css/read.css" rel="stylesheet" type="text/css" />
+		<link href="/css/tags-input.css" rel="stylesheet" type="text/css" />
+		<link href="//fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400,300" rel="stylesheet" type="text/css" />
+
+		<script src="/js/lib/jquery.js" charset="utf-8"></script>
+		<script src="/js/lib/angular.js" charset="utf-8"></script>
+		<script src="/js/lib/angular-resource.js" charset="utf-8"></script>
+		<script src="/js/lib/angular-route.js" charset="utf-8"></script>
+		<script src="/js/lib/angular-sanitize.js" charset="utf-8"></script>
+		<script src="/js/lib/angular-translate.js" charset="utf-8"></script>
+		<script src="/js/lib/angular-translate-loader-static-files.js" charset="utf-8"></script>
+		<script src="/js/lib/ng-tags-input.js" charset="utf-8"></script>
+		<script src="/js/lib/ng-infinite-scroll.js" charset="utf-8"></script>
+		<script src="/js/lib/moment.js" charset="utf-8"></script>
+		<script src="/js/lib/angular-moment.js" charset="utf-8"></script>
+
+		<script src="/js/router.js" charset="utf-8"></script>
+		<script src="/js/forms.js" charset="utf-8"></script>
+		<script src="/js/resources.js" charset="utf-8"></script>
+		<script src="/js/incomb.js" charset="utf-8"></script>
+		<script src="/js/user.js" charset="utf-8"></script>
+		<script src="/js/home.js" charset="utf-8"></script>
+		<script src="/js/news.js" charset="utf-8"></script>
+		<script src="/js/category.js" charset="utf-8"></script>
+		<script src="/js/provider.js" charset="utf-8"></script>
+		<script src="/js/profile.js" charset="utf-8"></script>
+		<script src="/js/settings.js" charset="utf-8"></script>
+		<script src="/js/user-settings.js" charset="utf-8"></script>
+		<script src="/js/user-locales.js" charset="utf-8"></script>
+		<script src="/js/nav.js" charset="utf-8"></script>
+		<script src="/js/tag-preferences.js" charset="utf-8"></script>
+		<script src="/js/category-preferences.js" charset="utf-8"></script>
+		<script src="/js/search.js" charset="utf-8"></script>
+		<script src="/js/filter.js" charset="utf-8"></script>
+		<script src="/js/errors.js" charset="utf-8"></script>
+		<script src="/js/comb.js" charset="utf-8"></script>
+		<script src="/js/read.js" charset="utf-8"></script>
+		<script src="/js/slider.js" charset="utf-8"></script>
+		<script src="/js/styles.js" charset="utf-8"></script>
+		<noscript>
+			<title>InComb</title>
+		</noscript>
+	</head>
+	<body>
+		<header ng-controller="searchCtrl">
+			<div class="header-container">
+				<a href="{{ 'home' | url }}" title="Home" class="logo">
+					<img src="/img/logo.png" width="160" height="62" alt="InComb" />
+				</a>
+
+				<div class="search-results" ng-show="results">
+					<div ng-if="results.categories && results.categories.results.length">
+						<h3>{{ 'search.type.categories' | translate }}</h3>
+						<ul class="result-group">
+							<li ng-repeat="category in results.categories.results" class="category-{{ category.id }}">
+								<a href="{{ 'category' | url: { 'name': ( category.nameKey | translate | lowercase ) } }}" title="{{ category.nameKey | translate }}">
+									<span class="icon">{{ ( category.nameKey | translate ).substring(0, 1) }}</span>
+									<span class="text">{{ category.nameKey | translate }}</span>
+								</a>
+							</li>
+							<li ng-if="results.categories.hasMore">
+								<a href="#" ng-click="results.categories.loadMore()" title="{{ 'search.loadMore' | translate }}">
+									<span class="text">{{ 'search.loadMore' | translate }}</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div ng-if="results.users && results.users.results.length">
+						<h3>{{ 'search.type.users' | translate }}</h3>
+						<ul class="result-group">
+							<li ng-repeat="user in results.users.results">
+								<a href="{{ 'profile' | url:{ username: user.username } }}" title="{{ user.displayName }}">
+									<span class="icon"><span class="entypo-user"></span></span>
+									<span class="text">{{ user.displayName }} ({{ user.username }})</span>
+								</a>
+							</li>
+							<li ng-if="results.users.hasMore">
+								<a href="#" ng-click="results.users.loadMore()" title="{{ 'search.loadMore' | translate }}">
+									<span class="text">{{ 'search.loadMore' | translate }}</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div ng-if="results.providers && results.providers.results.length">
+						<h3>{{ 'search.type.providers' | translate }}</h3>
+						<ul class="result-group">
+							<li ng-repeat="provider in results.providers.results">
+								<a href="{{ 'provider' | url:{ name: ( provider.name | lowercase ) } }}" title="{{ provider.name }}">
+									<span class="icon"><span class="entypo-rss"></span></span>
+									<span class="text">{{ provider.name }}</span>
+								</a>
+							</li>
+							<li ng-if="results.providers.hasMore">
+								<a href="#" ng-click="results.providers.loadMore()" title="{{ 'search.loadMore' | translate }}">
+									<span class="text">{{ 'search.loadMore' | translate }}</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div ng-if="results.news && results.news.results.length">
+						<h3>{{ 'search.type.news' | translate }}</h3>
+						<ul class="result-group">
+							<li ng-repeat="news in results.news.results">
+								<a href="{{ 'news' | url:{ id: news.id } }}" title="{{ news.title }}">
+									<h4>{{ news.title }}</h4>
+									<h5>{{ (news.category.nameKey | translate) + " · " + news.provider.name }}</h5>
+									<span class="text">{{ (news.text | plain).substring(0, 200) }}</span>
+								</a>
+							</li>
+							<li ng-if="results.news.hasMore">
+								<a href="#" ng-click="results.news.loadMore()" title="{{ 'search.loadMore' | translate }}">
+									<span class="text">{{ 'search.loadMore' | translate }}</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<input type="search" placeholder="{{ 'search.placeholder' | translate }}" ng-model="searchText" ng-class="{active: searchActive}" />
+				<span class="entypo-search"></span>
+				<span class="entypo-cancel" ng-click="cancelSearch()" ng-show="searchActive"></span>
+			</div>
+		</header>
+
+		<div ng-view></div>
+
+	</body>
+</html>

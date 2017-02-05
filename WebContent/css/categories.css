@@ -1,0 +1,142 @@
+/**
+ * Switzerland
+ */
+.search-results .category-1 .icon,
+nav li.category-1 .icon {
+	background: #c0392b;
+}
+
+.search-results .category-1 .icon:before,
+nav li.category-1 .icon:before {
+	border-right-color: #c0392b;
+}
+
+.search-results .category-1 .icon:after,
+nav li.category-1 .icon:after {
+	border-left-color: #c0392b;
+}
+
+main.category-1,
+.news-group.category-1 {
+	border-top-color: #c0392b;
+}
+
+
+/**
+ * World news
+ */
+.search-results .category-2 .icon,
+nav li.category-2 .icon {
+	background: #8e44ad;
+}
+
+.search-results .category-2 .icon:before,
+nav li.category-2 .icon:before {
+	border-right-color: #8e44ad;
+}
+
+.search-results .category-2 .icon:after,
+nav li.category-2 .icon:after {
+	border-left-color: #8e44ad;
+}
+
+main.category-2,
+.news-group.category-2 {
+	border-top-color: #8e44ad;
+}
+
+
+/**
+ * Sport
+ */
+.search-results .category-3 .icon,
+nav li.category-3 .icon {
+	background: #f1c40f;
+}
+
+.search-results .category-3 .icon:before,
+nav li.category-3 .icon:before {
+	border-right-color: #f1c40f;
+}
+
+.search-results .category-3 .icon:after,
+nav li.category-3 .icon:after {
+	border-left-color: #f1c40f;
+}
+
+main.category-3,
+.news-group.category-3 {
+	border-top-color: #f1c40f;
+}
+
+
+/**
+ * Economy
+ */
+.search-results .category-4 .icon,
+nav li.category-4 .icon {
+	background: #3498db;
+}
+
+.search-results .category-4 .icon:before,
+nav li.category-4 .icon:before {
+	border-right-color: #3498db;
+}
+
+.search-results .category-4 .icon:after,
+nav li.category-4 .icon:after {
+	border-left-color: #3498db;
+}
+
+main.category-4,
+.news-group.category-4 {
+	border-top-color: #3498db;
+}
+
+
+/**
+ * Digital
+ */
+.search-results .category-5 .icon,
+nav li.category-5 .icon {
+	background: #2c3e50;
+}
+
+.search-results .category-5 .icon:before,
+nav li.category-5 .icon:before {
+	border-right-color: #2c3e50;
+}
+
+.search-results .category-5 .icon:after,
+nav li.category-5 .icon:after {
+	border-left-color: #2c3e50;
+}
+
+main.category-5,
+.news-group.category-5 {
+	border-top-color: #2c3e50;
+}
+
+
+/**
+ * Health
+ */
+.search-results .category-6 .icon,
+nav li.category-6 .icon {
+	background: #27ae60;
+}
+
+.search-results .category-6 .icon:before,
+nav li.category-6 .icon:before {
+	border-right-color: #27ae60;
+}
+
+.search-results .category-6 .icon:after,
+nav li.category-6 .icon:after {
+	border-left-color: #27ae60;
+}
+
+main.category-6,
+.news-group.category-6 {
+	border-top-color: #27ae60;
+}

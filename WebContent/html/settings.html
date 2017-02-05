@@ -1,0 +1,38 @@
+<div id="container" class="clearfix">
+	<ng-include src="'/html/parts/nav.html'"></ng-include>
+	<main>
+		<h1>{{ 'pageTitles.settings' | translate }}</h1>
+
+		<section ng-controller="tagPreferencesCtrl">
+			<h2>{{ 'pageTitles.tagPreferences' | translate }}</h2>
+			<p>{{ 'settings.tagsInfo' | translate }}</p>
+			<tags-input ng-model="tags" display-property="tag" on-tag-added="addTag($tag)" on-tag-removed="deleteTag($tag)" placeholder="{{ 'settings.addTag' | translate }}" replace-spaces-with-dashes="false"></tags-input>
+		</section>
+
+		<section ng-controller="categoryPreferencesCtrl">
+			<h2>{{ 'pageTitles.categoryPreferences' | translate }}</h2>
+			<p>{{ 'settings.categoriesInfo' | translate }}</p>
+			<fieldset>
+				<div ng-repeat="categoryPreference in categoryPreferences">
+					<label for="categorypreference-{{ categoryPreference.category.id }}">
+						{{ categoryPreference.category.nameKey | translate }} <!-- ({{ categoryPreference.factor * 100 | number:0 }}%) -->
+					</label>
+					<input type="range" min="0" max="1" step="0.01" ng-change="categoryPreference.save()" ng-model="categoryPreference.factor" id="categorypreference-{{ categoryPreference.category.id }}" />
+				</div>
+			</fieldset>
+		</section>
+
+		<section ng-controller="userLocalesCtrl">
+			<h2>{{ 'pageTitles.userLocaleSettings' | translate }}</h2>
+			<p>{{ 'settings.userLocalesInfo' | translate }}</p>
+			<fieldset class="two-col">
+				<div ng-repeat="(locale, selected) in locales" class="checkbox">
+					<input type="checkbox" ng-change="selected ? addLocale(locale) : removeLocale(locale)" id="user-locale-{{ locale }}" ng-model="selected" />
+					<label for="user-locale-{{ locale }}">
+						{{ ('locales.' + locale) | translate }}
+					</label>
+				</div>
+			</fieldset>
+		</section>
+	</main>
+</div>

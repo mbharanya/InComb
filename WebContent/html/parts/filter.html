@@ -1,0 +1,50 @@
+<form ng-controller="newsFilterCtrl" class="filter">
+	<fieldset class="two-col">
+		<div ng-if="!filter.presets.providerId">
+			<label for="provider">{{ 'filter.provider' | translate }}</label>
+			<select ng-model="filter.data.providerId" id="provider">
+				<option value="0">{{ 'filter.all' | translate }}</option>
+				<option ng-repeat="provider in providers" value="{{ provider.id }}">{{ provider.name }}</option>
+			</select>
+		</div>
+
+		<div ng-if="!filter.presets.categoryId">
+			<label for="category">{{ 'filter.category' | translate }}</label>
+			<select ng-model="filter.data.categoryId" id="category">
+				<option value="0">{{ 'filter.all' | translate }}</option>
+				<option ng-repeat="category in categories" value="{{ category.id }}">{{ category.nameKey | translate }}</option>
+			</select>
+		</div>
+
+		<div>
+			<label for="startPublishDate">{{ 'filter.timespan' | translate }}</label>
+			<input type="date" ng-model="filter.data.startPublishDate" id="startPublishDate" placeholder="{{ 'filter.dateFormat' | translate }}" />
+			<input type="date" ng-model="filter.data.endPublishDate" placeholder="{{ 'filter.dateFormat' | translate }}" />
+		</div>
+
+		<div ng-show="user">
+			<label>{{ 'filter.source' | translate }}</label>
+			<div class="checkbox">
+				<input type="checkbox" ng-model="filter.data.sourceUser" id="newsSourceUser" value="true" />
+				<label for="newsSourceUser">{{ 'filter.personalized' | translate }}</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" ng-model="filter.data.sourceBees" id="newsSourceBees" value="true" />
+				<label for="newsSourceBees">{{ 'filter.bees' | translate }}</label>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset class="two-col" ng-if="!filter.presets.sortorder">
+		<label for="sortorder">{{ 'filter.sortorder' | translate }}</label>
+		<select ng-model="filter.data.sortorder" id="sortorder">
+			<option value="0">{{ 'filter.relevance' | translate }}</option>
+			<option value="1" ng-disabled="filter.data.providerId > 0">{{ 'filter.provider' | translate }}</option>
+			<option value="2">{{ 'filter.publishDate' | translate }}</option>
+			<option value="3">{{ 'filter.title' | translate }}</option>
+			<option value="4" ng-disabled="filter.data.categoryId > 0">{{ 'filter.category' | translate }}</option>
+			<option value="5">{{ 'filter.comments' | translate }}</option>
+			<option value="6">{{ 'filter.ins' | translate }}</option>
+		</select>
+	</fieldset>
+</form>

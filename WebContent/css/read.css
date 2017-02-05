@@ -1,0 +1,90 @@
+.news-list {
+	float: none;
+	display: inline-block;
+	overflow-y: auto;
+	max-height: 100%;
+	width: 25%;
+	padding: 20px;
+	position: absolute;
+	top: 0px;
+	border-top: 100px solid transparent;
+	z-index: 1;
+
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.news-frame {
+	display: inline-block;
+	width: 75%;
+	height: 100%;
+	position: relative;
+	vertical-align: top;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 150;
+}
+
+.news-frame iframe {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background: #fff;
+
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-ms-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+}
+
+.read-view .news.small-img img {
+	width: 0px;
+	height: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.read-view .news-social .icon-text .long {
+	display: none;
+}
+
+.read-view header {
+	width: 25%;
+	padding: 20px;
+	z-index: 10;
+	position: absolute;
+	top: 0px;
+	text-align: center;
+
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.read-view .logo {
+	text-align: center;
+}
+
+.read-view header .left,
+.read-view header .right {
+	position: absolute;
+	top: 31px;
+	z-index: 30;
+}
+
+.read-view header .left {
+	left: 20px;
+}
+
+.read-view header .right {
+	right: 20px;
+}
+
+.provider-news-img {
+	vertical-align: middle;
+	max-height: 100%;
+	max-width: 100%;
+}

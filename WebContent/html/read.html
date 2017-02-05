@@ -1,0 +1,25 @@
+<main class="full-content read-view">
+	<header>
+		<a ng-href="#" ng-click="back()" class="icon left">
+			<span class="entypo-left-open"></span>
+		</a>
+
+		<a href="{{ 'home' | url }}" title="Home" class="logo">
+			<img src="/img/logo.png" onerror="this.src='/img/logo.png'" width="160" height="62" alt="InComb" />
+		</a>
+
+		<a ng-href="{{ selectedNews.link }}" class="icon right" ng-show="selectedNews" target="_blank">
+			<img ng-src="{{ selectedNews.provider.imagePath }}" alt="{{ selectedNews.link }}" class="provider-news-img" />
+		</a>
+	</header>
+
+	<section class="news-list">
+		<div infinite-scroll="news.loadMore()" infinite-scroll-disabled="!news || !news.hasMore" infinite-Scroll-immediate-check="false">
+			<ng-include ng-repeat="news in news.records" src="'/html/parts/news-group.html'"></ng-include>
+		</div>
+	</section>
+
+	<section class="news-frame" ng-show="selectedNews">
+		<iframe src="{{ selectedNews.frameLink }}" frameborder="0"></iframe>
+	</section>
+</main>

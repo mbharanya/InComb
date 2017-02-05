@@ -1,0 +1,26 @@
+<!--
+<section class="big-info">
+	<h1>Hey {{ user.displayName }}!</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="{{ 'register' | url }}" title="Test">Registrieren</a>.</p>
+	<p>Hier voll geiler Motivator für das <a href="{{ 'login' | url }}" title="Login">Login</a></p>
+</section>
+-->
+
+<div id="container" class="clearfix">
+	<ng-include src="'/html/parts/nav.html'"></ng-include>
+	<main ng-init="filterVisible = false" ng-class="{'filter-visible': filterVisible}">
+		<ng-include src="'/html/parts/filter.html'"></ng-include>
+		<div class="title clearfix">
+			<h1>{{ 'pageTitles.home' | translate }}</h1>
+			<a href="#" class="icon right" ng-click="filterVisible = !filterVisible">
+				<span class="entypo-menu" ng-class="{'entypo-up-open': filterVisible}"></span>
+			</a>
+		</div>
+
+		<div infinite-scroll="news.loadMore()" infinite-scroll-disabled="!news || !news.hasMore" infinite-scroll-immediate-check="false" infinite-scroll-distance="2">
+			<ng-include ng-repeat="news in news.records" src="'/html/parts/news-group.html'"></ng-include>
+		</div>
+
+		<p ng-show="news && news.totalHits == 0">{{ 'news.noResults' | translate }}</p>
+	</main>
+</div>

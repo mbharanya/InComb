@@ -1,0 +1,241 @@
+{
+	"pageTitles": {
+		"appendix": " - InComb",
+		"home": "Home",
+		"register": "Register",
+		"login": "Log in",
+		"settings": "Settings",
+		"logout": "Logout",
+		"tagPreferences": "Topics",
+		"categoryPreferences": "Categories",
+		"userLocaleSettings": "Languages",
+		"myComb": "My Comb",
+		"read": "Read News",
+		"404": "Page not found - 404",
+		"500": "An internal error occured - 500"
+	},
+
+	"modules": {
+		"news": "News"
+	},
+
+	"categories": {
+		"news": {
+			"switzerland": "Switzerland",
+			"worldNews": "World",
+			"sport": "Sports",
+			"economy": "Economy",
+			"digital": "Technology",
+			"health": "Health"
+		}
+	},
+
+	"userprofile": {
+		"yes": "yes",
+		"no":"no",
+		"infoAbout": "Infos about",
+		"userActive": "User active",
+		"followingBees": "Bees that fly with",
+		"beesFollowing":"flies with the following bees",
+		"recentActivities":"s recent activities",
+		"usersins" : "s Ins",
+		"userscombs": "s Combs",
+		"userscomments": "s Comments",
+		"ins": "Ins",
+		"combs": "Combs",
+		"comments": "Comments",
+		"amountWithFlyings": "With-Flyings",
+		"amountFlyWiths": "Fly-withs",
+		"privateProfileInfo": "This Bee doesn't want to make his profile public, we can't show you anything more."
+	},
+
+	"actions": {
+		"login": "login",
+		"register": "register",
+		"save": "save",
+		"addMyHoney": "add my honey!",
+		"deleteUser": "Delete Account",
+		"deleteUserConfirm": "Are you sure, that you want to delete your account?"
+	},
+
+	"fields": {
+		"username": "Username",
+		"password": "Password",
+		"passwordRetype": "Retype password",
+		"email": "Email",
+		"displayName": "Name",
+		"privateProfile": "Private profile"
+	},
+
+	"validation":{
+		"user": {
+			"email": {
+				"invalid": "This email is invalid",
+				"required": "An email is required",
+				"exists": "This email already exists"
+			},
+			"username": {
+				"invalid": "This username is invalid",
+				"required": "A username is required",
+				"exists": "This username already exists"
+			},
+			"displayName": {
+				"invalid": "This name is invalid",
+				"required": "A name is required"
+			},
+			"password": {
+				"invalid": "This password is invalid",
+				"required": "A password is required"
+			}
+		},
+		"comment": {
+			"userId": {
+				"required": "A userId is required",
+				"invalid": "This userId is invalid"
+			},
+			"contentId": {
+				"required": "A contentId is required",
+				"invalid": "This contentId is invalid"
+			},
+			"comment": {
+				"required": "A comment is required",
+				"invalid": "This comment is invalid"
+			}
+		},
+		"votes": {
+			"userId": {
+				"required": "A userId is required",
+				"invalid": "This userId is invalid"
+			},
+			"contentId": {
+				"required": "A contentId is required",
+				"invalid": "This contentId is invalid"
+			},
+			"up": {
+				"required": "A value for up is required",
+				"invalid": "This value for up is invalid"
+			}
+		}
+	},
+
+	"errors": {
+		"notAuthorized": "This user is not authorized for the requested action",
+		"login": {
+			"wrongCredentials": "Username or password is incorrect."
+		},
+		"404": {
+			"info": "The page you were looking for appears to have been moved, deleted or does not exist. You can try to search for it in the search box above."
+		},
+		"500": {
+			"info": "It looks like we've broken something on our side. Don't panic and try again in a few minutes. If the problem persists please let us know at info@incomb.com."
+		}
+	},
+
+	"responses":{
+		"comments": {
+			"addedComment": "Successfully added comment",
+			"errors":{
+				"contentId":{
+					"invalid": "ContentId is invalid"
+				}
+			}
+		},
+		"users":{
+			"notModified": "No changes were made to the user",
+			"updated": "Successfully updated user",
+			"deleted": "Successfully deleted user",
+			"errors": {
+				"notFound": "We couldn't find the requested user"
+			}
+		},
+		"votes":{
+			"errors": {
+				"contentId":{
+					"invalid": "ContentId is invalid"
+				}
+			}
+		}
+	},
+
+	"news": {
+		"readMore": "Read more",
+		"noResults": "We couldn't find anything for the given search terms.",
+		"published": "published",
+		"providerWebsite": "Go to the providers website",
+		"showMoreSimilarNews": "Show more similar news",
+		"hideMoreSimilarNews": "Show less similar news",
+		"social": {
+			"share": "Share",
+			"twitter": "Share on Twitter",
+			"facebook": "Share on Facebook",
+			"googleplus": "Share on Google+",
+			"inMyComb": "In my Comb",
+			"outOfMyComb": "Remove from my Comb",
+			"in": "In it",
+			"comb": "Comb it",
+			"comments": "comments"
+		}
+	},
+
+	"comb": {
+		"noResults": "There are no news in your comb."
+	},
+
+	"settings": {
+		"addTag": "Add a tag",
+		"tagsInfo": "Add topics, that interest you. We will then show you more news about this topic. If you don't enter topics, we can't filter your news.",
+		"categoriesInfo": "Change how much of each category you will see on your feed.",
+		"userLocalesInfo": "We will only show you news in the chosen languages."
+	},
+
+	"search": {
+		"type": {
+			"users": "Bees",
+			"categories": "Categories",
+			"providers": "News Providers",
+			"news": "News"
+		},
+		"placeholder": "Search news, bees, categories ...",
+		"loadMore": "Load more results ..."
+	},
+
+	"filter": {
+		"sortorder": "Sort order",
+		"relevance": "Relevance",
+		"provider": "Provider",
+		"publishDate": "Publishing date",
+		"title": "Title",
+		"category": "Category",
+		"comments": "Comments",
+		"ins": "Ins",
+		"timespan": "Timespan",
+		"source": "Sources",
+		"personalized": "Personalized",
+		"bees": "Bees",
+		"all": "-- All News --",
+		"dateFormat": "yyyy-mm-dd"
+	},
+
+	"flyWith": {
+		"flyWith": "Fly with",
+		"flyAway": "Fly away"
+	},
+
+	"locales": {
+		"de": "German",
+		"en": "English"
+	},
+	
+	"guardianParser": {
+		"ticker": "This news article could be a live ticker. Please click on the following link to open it."
+	},
+	
+	"registerText": {
+		"marketingText": "Registriere dich gleich für InComb und erhalte Zugriff auf erweiterte Funktionen. Du kannst Nachrichten kommentieren, bewerten und mit anderen Benutzern folgen (mitfliegen). Auch ist es möglich die Aktionen deiner Freunde auf Schritt und Tritt zu verfolgen und Nachrichten fürs später lesen zu speichern (in my comb).",
+		"advantagesTitel": "Deine Vorteile",
+		"advantage1": "Du bestimmst was dich interessiert",
+		"advantage2": "Erhalte nur News in den Sprachen die du sprichst.",
+		"advantage3": "Suche schnell nach Nachrichten, Quellen und Benutzern",
+		"advantage4": "Sei immer up to date und verpasse nie mehr die wichtigsten News"
+	}
+}

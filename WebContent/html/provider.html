@@ -1,0 +1,25 @@
+<section class="big-info provider-header">
+	<a href="{{ provider.website }}" title="{{ 'news.providerWebsite' | translate }}" target="_blank" rel="external" class="no-line left">
+		<img ng-src="{{ provider.imagePath }}" alt="{{ provider.name }}" ng-if="provider.imagePath" />
+	</a>
+</section>
+
+<div id="container" class="clearfix">
+	<ng-include src="'/html/parts/nav.html'"></ng-include>
+	<main ng-init="filterVisible = false" ng-class="{'filter-visible': filterVisible}">
+		<ng-include src="'/html/parts/filter.html'"></ng-include>
+		<div class="title clearfix">
+			<h1>{{ provider.name }}</h1>
+
+			<a href="#" class="icon right" ng-click="filterVisible = !filterVisible">
+				<span class="entypo-menu" ng-class="{'entypo-up-open': filterVisible}"></span>
+			</a>
+		</div>
+
+		<div infinite-scroll="news.loadMore()" infinite-scroll-disabled="!news || !news.hasMore" infinite-scroll-immediate-check="false" infinite-scroll-distance="2">
+			<ng-include ng-repeat="news in news.records" src="'/html/parts/news-group.html'"></ng-include>
+		</div>
+
+		<p ng-show="news && news.totalHits == 0">{{ 'news.noResults' | translate }}</p>
+	</main>
+</div>

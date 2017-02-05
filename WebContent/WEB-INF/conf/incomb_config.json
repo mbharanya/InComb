@@ -1,0 +1,39 @@
+{
+	"debug": true,
+	
+	"db": {
+		"host": "localhost",
+		"port": 3306,
+		"user": "root",
+		"password": "",
+		"name": "incomb"
+	},
+	
+	"validation":{
+		"displayname": {
+			"minLength": 3,
+			"maxLength": 255,
+			"allowSpecial": true
+		},
+		"username": {
+			"minLength": 3,
+			"maxLength": 255,
+			"allowSpecial": true
+		},
+		"password": {
+			"minLength": 5,
+			"maxLength": 255,
+			"mixedCaseLetters": false,
+			"numbers": true,
+			"special": false
+		},
+		"comment": {
+			"minLength": 2,
+			"maxLength": 600
+		}
+	},
+	
+	"contentLoader": {
+		"run": true
+	}
+}

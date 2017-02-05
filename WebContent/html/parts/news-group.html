@@ -1,0 +1,13 @@
+<div class="news-group category-{{ news.category.id }}" ng-init="moreCollapsed = true">
+	<ng-include src="'/html/parts/news.html'"></ng-include>
+
+	<div ng-repeat="news in news.otherNews" ng-class="{'more-collapsed': $index >= 3 && moreCollapsed}">
+		<ng-include src="'/html/parts/news.html'"></ng-include>
+	</div>
+
+	<a href="" ng-click="moreCollapsed = !moreCollapsed" ng-show="news.otherNews.length > 3" class="more-similar-news">
+		<span ng-class="{'entypo-up-open': !moreCollapsed, 'entypo-down-open': moreCollapsed}"></span>
+		<span ng-show="moreCollapsed" class="text">{{ 'news.showMoreSimilarNews' | translate }}</span>
+		<span ng-show="!moreCollapsed" class="text">{{ 'news.hideMoreSimilarNews' | translate }}</span>
+	</a>
+</div>

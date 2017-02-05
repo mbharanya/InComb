@@ -1,0 +1,13 @@
+<div id="container" class="clearfix">
+	<ng-include src="'/html/parts/nav.html'"></ng-include>
+	<main>
+		<ng-include src="'/html/parts/filter.html'"></ng-include>
+		<h1>{{ 'pageTitles.myComb' | translate }}</h1>
+
+		<div>
+			<ng-include ng-repeat="news in news" src="'/html/parts/news-group.html'"></ng-include>
+		</div>
+
+		<p ng-show="news && news.length == 0">{{ 'comb.noResults' | translate }}</p>
+	</main>
+</div>

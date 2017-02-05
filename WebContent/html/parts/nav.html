@@ -1,0 +1,61 @@
+<nav ng-controller="navCtrl">
+	<div fixed="fixed" class="nav-wrapper">
+		<ul>
+			<li class="{{ ( 'home' | activeRoute:{} ) ? 'active' : '' }}">
+				<a href="{{ 'home' | url }}" title="{{ 'pageTitles.home' | translate }}">
+					<span class="icon entypo"><span class="entypo-home"></span></span>
+					<span class="text">{{ 'pageTitles.home' | translate }}</span>
+				</a>
+			</li>
+			<li ng-repeat="category in categories" class="category-{{ category.id }} {{ ( 'category' | activeRoute:{ 'name': ( category.nameKey | translate | lowercase ) } ) ? 'active' : '' }}">
+				<a href="{{ 'category' | url: { 'name': ( category.nameKey | translate | lowercase ) } }}" title="{{ category.nameKey | translate }}">
+					<span class="icon">{{ ( category.nameKey | translate ).substring(0, 1) }}</span>
+					<span class="text">{{ category.nameKey | translate }}</span>
+				</a>
+			</li>
+		</ul>
+
+		<ul ng-if="user">
+			<li class="{{ ( 'profile' | activeRoute:{ 'username': user.username } ) ? 'active' : '' }}">
+				<a href="{{ 'profile' | url: { 'username': user.username } }}" title="{{ user.displayName }}">
+					<span class="icon entypo"><span class="entypo-user"></span></span>
+					<span class="text">{{ user.displayName }}</span>
+				</a>
+			</li>
+			<li class="{{ ( 'comb' | activeRoute ) ? 'active' : '' }}">
+				<a href="{{ 'comb' | url }}" title="{{ 'pageTitles.myComb' | translate }}">
+					<span class="icon entypo"><span class="entypo-layout"></span></span>
+					<span class="text">{{ 'pageTitles.myComb' | translate }}</span>
+				</a>
+			</li>
+			<li class="{{ ( 'settings' | activeRoute:{} ) ? 'active' : '' }}">
+				<a href="{{ 'settings' | url }}" title="{{ 'pageTitles.settings' | translate }}">
+					<span class="icon entypo"><span class="entypo-cog"></span></span>
+					<span class="text">{{ 'pageTitles.settings' | translate }}</span>
+				</a>
+			</li>
+			<li>
+				<a href="{{ 'logout' | url }}" title="{{ 'pageTitles.logout' | translate }}">
+					<span class="icon entypo"><span class="entypo-logout"></span></span>
+					<span class="text">{{ 'pageTitles.logout' | translate }}</span>
+				</a>
+			</li>
+		</ul>
+
+		<ul ng-if="!user">
+			<li class="{{ ( 'login' | activeRoute ) ? 'active' : '' }}">
+				<a href="{{ 'login' | url }}" title="{{ 'pageTitles.login' | translate }}">
+					<span class="icon entypo"><span class="entypo-login"></span></span>
+					<span class="text">{{ 'pageTitles.login' | translate }}</span>
+				</a>
+			</li>
+			<li class="{{ ( 'register' | activeRoute ) ? 'active' : '' }}">
+				<a href="{{ 'register' | url }}" title="{{ 'pageTitles.register' | translate }}">
+					<span class="icon entypo"><span class="entypo-pencil"></span></span>
+					<span class="text">{{ 'pageTitles.register' | translate }}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div></div>
+</nav>

@@ -1,0 +1,26 @@
+<section class="news" ng-class="{'small-img': !news.imageUrl || news.imageWidth < 300, 'big-img': news.imageUrl && news.imageWidth >= 300, 'collapsed': news.collapsed}">
+	<div class="img-wrapper">
+		<img ng-if="news.imageUrl" ng-src="{{ news.imageUrl }}" class="img" alt="{{ news.title }}" />
+		<div class="title-wrapper" ng-click="news.expand()">
+			<h4>
+				<a href="{{ 'category' | url:{name: ( news.category.nameKey | translate | lowercase )} }}" title="{{ news.category.nameKey | translate }}">
+					{{ news.category.nameKey | translate }}
+				</a>
+				·
+				<a href="{{ 'provider' | url:{name: news.provider.name} }}" title="{{ news.provider.name }}">{{ news.provider.name }}</a>
+
+				<a href="{{ 'news' | url:{id: news.id} }}" title="{{ 'news.published' | translate }}">
+					<span class="time" am-time-ago="news.publishDate"></span>
+				</a>
+			</h4>
+			<h3>{{ news.title }}</h3>
+		</div>
+	</div>
+	<p class="news-content">
+		<span ng-bind-html="news.htmlText"></span>
+		<a href="#" ng-click="news.go()" title="{{ 'news.readMore' | translate }}">
+			{{ 'news.readMore' | translate }} <span class="entypo-right-thin"></span>
+		</a>
+	</p>
+	<ng-include src="'/html/parts/news-social.html'"></ng-include>
+</section>

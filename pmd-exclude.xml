@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="Android Application Rules"
+    xmlns="http://pmd.sf.net/ruleset/1.0.0"
+    xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd"
+    xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd" >
+
+    <description>Remove rules</description>
+
+    <rule ref="rulesets/clone.xml" />
+    <rule ref="rulesets/finalizers.xml" />
+    <rule ref="rulesets/imports.xml" />
+    <rule ref="rulesets/logging-java.xml" />
+    <rule ref="rulesets/naming.xml" >
+        <exclude name="AbstractNaming" />
+    </rule>
+
+</ruleset>

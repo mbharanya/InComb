@@ -1,0 +1,19 @@
+<main class="small-content">
+	<h1>{{ 'pageTitles.login' | translate }}</h1>
+
+	<form ng-submit="loginform.$valid && login()" name="loginform" novalidate>
+		<fieldset>
+			<ul class="errors" ng-if="errors.length">
+				<li ng-repeat="error in errors">{{ error }}</li>
+			</ul>
+
+			<label for="username">{{ 'fields.username' | translate }}</label>
+			<input type="text" ng-model="data.username" id="username" required autofocus ng-class="{'ng-invalid': errors.length}" />
+
+			<label for="password">{{ 'fields.password' | translate }}</label>
+			<input type="password" ng-model="data.password" id="password" required ng-class="{'ng-invalid': errors.length}" />
+
+			<input type="submit" value="{{ 'actions.login' | translate }}" />
+		</fieldset>
+	</form>
+</main>

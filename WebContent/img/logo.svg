@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.49698in" height="1.59564in"
+		viewBox="0 0 395.782 114.886" xml:space="preserve" color-interpolation-filters="sRGB" class="st6">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvConvertTheme"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st2 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st3 {fill:#000000;font-family:Open Sans;font-size:6em;font-weight:300}
+		.st4 {fill:#fc9b43;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st5 {fill:#ffffff;font-family:Open Sans;font-size:6em;font-weight:400}
+		.st6 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>InComb Logo</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(98.8118,-0.820866)">
+			<title>Rechteck.24</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<rect x="0" y="1.57087" width="296.22" height="113.315" class="st1"/>
+		</g>
+		<g id="shape2-3" v:mID="2" v:groupContext="shape" transform="translate(147.001,-23.015)">
+			<title>Tabelle.2</title>
+			<desc>Comb</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="124.016" cy="80.4225" width="248.04" height="68.9266"/>
+			<rect x="0" y="45.9592" width="248.031" height="68.9266" class="st2"/>
+			<text x="4" y="102.02" class="st3" v:langID="2055"><v:paragraph/><v:tabList/>Comb</text>		</g>
+		<g id="shape3-6" v:mID="3" v:groupContext="shape" transform="translate(9.52042,-0.75)">
+			<title>Sechseck.25</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<path d="M89.42 1.5 L23.96 1.5 L-8.77 58.19 L23.96 114.89 L89.42 114.89 L122.16 58.19 L89.42 1.5 Z" class="st4"/>
+		</g>
+		<g id="shape4-8" v:mID="4" v:groupContext="shape" transform="translate(13.7724,-22.9796)">
+			<title>Tabelle.4</title>
+			<desc>In</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="54.5669" cy="80.4225" width="109.14" height="68.9266"/>
+			<rect x="0" y="45.9592" width="109.134" height="68.9266" class="st2"/>
+			<text x="24.23" y="102.02" class="st5" v:langID="2055"><v:paragraph v:horizAlign="1"/><v:tabList/>In</text>		</g>
+	</g>
+</svg>

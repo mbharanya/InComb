@@ -1,0 +1,144 @@
+<main class="large-content profile-view" ng-init="updateFormVisible = false" ng-class="{'update-form-visible': updateFormVisible}">
+	<ng-include ng-if="user && profileUser.id == user.id" src="'/html/parts/user-update.html'"></ng-include>
+	<div class="title clearfix">
+		<img ng-src="{{ profileUser.userImg }}" alt="{{ profileUser.displayName }}" />
+		<h1>{{ profileUser.displayName }} ({{ profileUser.username }})</h1>
+
+        <a href="#" ng-click="flyWith(profileUser.id)" title="{{ 'flyWith.flyWith' | translate }}" ng-show="user && profileUser.id != user.id && !user.isFlyingWith(profileUser.id)" class="no-line right">
+	        <span class="icon">
+	        	<span class="entypo-heart"></span>
+	        </span>
+	        {{ 'flyWith.flyWith' | translate }}
+	    </a>
+        <a href="#" ng-click="flyAway(profileUser.id)" title="{{ 'flyWith.flyAway' | translate }}" ng-show="user && profileUser.id != user.id && user.isFlyingWith(profileUser.id)" class="no-line right">
+	        <span class="icon">
+	        	<span class="entypo-heart-empty"></span>
+	        </span>
+	        {{ 'flyWith.flyAway' | translate }}
+	    </a>
+
+        <a href="#" class="icon right" ng-click="updateFormVisible = !updateFormVisible" ng-show="user && profileUser.id == user.id">
+			<span class="entypo-pencil" ng-class="{'entypo-up-open': updateFormVisible}"></span>
+		</a>
+    </div>
+
+	<p ng-if="profileUser.privateProfile && !isLoggedInUser()">{{ 'userprofile.privateProfileInfo' | translate }}</p>
+
+	<div ng-if="!profileUser.privateProfile || isLoggedInUser()">
+		<h2>{{'userprofile.infoAbout' | translate}} {{profileUser.displayName}}</h2>
+		<div class="profile-info">
+			<div class="info">
+				<span class="amount">{{ profileUser.withFlyings.length || 0 }}</span>
+				<span class="text">{{ 'userprofile.amountWithFlyings' | translate }}</span>
+			</div><div class="info">
+				<span class="amount">{{ profileUser.flyWiths.length || 0 }}</span>
+				<span class="text">{{ 'userprofile.amountFlyWiths' | translate }}</span>
+			</div><div class="info">
+				<span class="amount">{{ totalIns }}</span>
+				<span class="text">{{ 'userprofile.ins' | translate }}</span>
+			</div><div class="info">
+				<span class="amount">{{ totalCombs }}</span>
+				<span class="text">{{ 'userprofile.combs' | translate }}</span>
+			</div><div class="info">
+				<span class="amount">{{ totalComments }}</span>
+				<span class="text">{{ 'userprofile.comments' | translate }}</span>
+			</div>
+		</div>
+
+		<section ng-show="profileUser.withFlyings.length > 0">
+			<h4>{{'userprofile.followingBees' | translate}} {{profileUser.displayName}}:</h4>
+			<div class="user-slider clearfix" slider=".slider-content" slide-amount="804">
+				<a href="#" class="slide-left" slide="left">
+					<span class="entypo-left-open"></span>
+				</a>
+				<div class="items-wrapper">
+					<ul class="slider-content">
+						<li ng-repeat="withFlying in profileUser.withFlyings" after-render="initSlider()">
+							<a href="{{ 'profile' | url:{ username: withFlying.username } }}" title="{{ withFlying.displayName }}">
+								<img class="gravatar-icon" ng-src="{{ withFlying.userImg }}" alt="{{ withFlying.displayName }}" />
+								<span class="text">
+									<span class="display-name">{{ withFlying.displayName }}</span>
+									<span class="username">{{ withFlying.username }}</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="slide-right" slide="right">
+					<span class="entypo-right-open"></span>
+				</a>
+			</div>
+		</section>
+
+		<section ng-show="profileUser.flyWiths.length > 0">
+			<h4>{{profileUser.displayName}} {{'userprofile.beesFollowing' | translate}}:</h4>
+			<div class="user-slider clearfix" slider=".slider-content" slide-amount="820">
+				<a href="#" class="slide-left" slide="left">
+					<span class="entypo-left-open"></span>
+				</a>
+				<div class="items-wrapper">
+					<ul class="slider-content">
+						<li ng-repeat="flyWith in profileUser.flyWiths" after-render="initSlider()">
+							<a href="{{ 'profile' | url:{ username: flyWith.username } }}" title="{{ flyWith.displayName }}">
+								<img class="gravatar-icon" ng-src="{{ flyWith.userImg }}" alt="{{ flyWith.displayName }}" />
+								<span class="text">
+									<span class="display-name">{{ flyWith.displayName }}</span>
+									<span class="username">{{ flyWith.username }}</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="slide-right" slide="right">
+					<span class="entypo-right-open"></span>
+				</a>
+			</div>
+		</section>
+
+		<h3 ng-show="totalIns > 0 || totalCombs > 0 || totalComments > 0">{{profileUser.displayName}}{{'userprofile.recentActivities' | translate}}:</h3>
+
+		<div>
+			<section class="profile-column" ng-show="totalIns > 0">
+				<h4>{{profileUser.displayName}}{{'userprofile.usersins' | translate}}</h4>
+				<div class="scroll-wrapper">
+					<ul infinite-scroll="loadMoreIns()" infinite-scroll-disabled="!hasMoreIns" infinite-scroll-parent="true" infinite-scroll-immediate-check="false">
+						<li ng-repeat="news in userIns">
+							<ng-include src="'/html/parts/news-short.html'"></ng-include>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="profile-column" ng-show="totalCombs > 0">
+				<h4>{{profileUser.displayName}}{{'userprofile.userscombs' | translate}}</h4>
+				<div class="scroll-wrapper">
+					<ul infinite-scroll="loadMoreIns()" infinite-scroll-disabled="!hasMoreIns" infinite-scroll-parent="true" infinite-scroll-immediate-check="false">
+						<li ng-repeat="news in userCombs">
+							<ng-include src="'/html/parts/news-short.html'"></ng-include>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+		<section ng-show="totalComments > 0">
+			<h4>{{profileUser.displayName}}{{'userprofile.userscomments' | translate}}</h4>
+			<div class="scroll-wrapper">
+				<ul class="profile-comments" infinite-scroll="loadMoreComments()" infinite-scroll-disabled="!hasMoreComments" infinite-scroll-parent="true" infinite-scroll-immediate-check="false">
+					<li ng-repeat="comment in userComments">
+						<div class="profile-comment">
+							<a href="{{ 'news' | url:{ id: comment.news.id } }}" title="{{ comment.news.title }}">
+								<h3>{{ comment.news.title }}</h3>
+							</a>
+
+							<span class="time" am-time-ago="comment.commentDate"></span>
+							<p>{{ comment.comment }}</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</main>
+
+<!-- Title background-color: #FCAC43; -->
