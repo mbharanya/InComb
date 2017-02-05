@@ -5,7 +5,7 @@ A dynamic personalized news feed.
 InComb used RSS feeds to fetch news, parse them add them to a Lucene index and display them nicely to the user.
 The user is able to set his/her news preferences in an intuitive and beautiful interface:
 
-![User Settings](/doc/user-settings.png?raw=true)
+![User Settings](/docs/user-settings.png?raw=true)
 
 To check out a running version of InComb visit http://incomb.com
 
