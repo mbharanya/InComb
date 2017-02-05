@@ -4,6 +4,7 @@ WEBAPPDIR=/var/lib/tomcat7/webapps
 WEBAPPNAME=ROOT
 BACKUPDIR=/root/backup/$(date "+%d.%m.%y_%H:%M:%S")
 MYSQL_USER=root
+MYSQL_PW=
 MYSQL_TABLE=incomb
 
 mkdir -p $BACKUPDIR
