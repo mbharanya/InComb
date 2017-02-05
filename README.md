@@ -3,7 +3,7 @@ _Does it feel like you’re wading through honey to get your news? Save time –
 
 
 A dynamic personalized news feed.
-InComb used RSS feeds to fetch news, parse them add them to a Lucene index and display them nicely to the user.
+InComb uses RSS feeds to fetch news, parse them, add them to a Lucene index and display them nicely to the user.
 The user is able to set his/her news preferences in an intuitive and beautiful interface:
 
 ![User Settings](/docs/user-settings.png?raw=true)
