@@ -8,12 +8,12 @@ public interface ContentParser<T> {
 	 * @return <code>true</code> if the parsing was successful. 
 	 * <code>false</code> if not.
 	 */
-	public boolean parse();
+	boolean parse();
 	
 	/**
 	 * Returns the parsed object.
 	 * @return T parsed object
 	 */
-	public T getParsedObject();
+	T getParsedObject();
 	
 }
