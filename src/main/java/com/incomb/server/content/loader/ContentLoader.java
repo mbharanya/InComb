@@ -44,7 +44,7 @@ public class ContentLoader implements Runnable {
 			manager.joinThread(this, contentReader.read(lastFetch));
 		}
 		catch(final Throwable t) {
-			LOGGER.error("An error occured during reading new contents from content source {}.", contentSource.getId(), t);
+			LOGGER.error("An error occurred during reading new contents from content source {}.", contentSource.getId(), t);
 		}
 	}
 

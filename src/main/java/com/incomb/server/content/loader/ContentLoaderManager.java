@@ -258,7 +258,7 @@ public class ContentLoaderManager extends Thread {
 			con.commit();
 
 		} catch (final SQLException e) {
-			LOGGER.error("SQLException occured while saving FetchHistory and fetching ContentSource {}",
+			LOGGER.error("SQLException occurred while saving FetchHistory and fetching ContentSource {}",
 					history != null ? history.toString() : "history is null", e);
 
 		} finally {

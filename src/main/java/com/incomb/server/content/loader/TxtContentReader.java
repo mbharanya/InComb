@@ -71,7 +71,7 @@ public class TxtContentReader implements IContentReader {
 			}
 
 		} catch (final Exception e) {
-			LOGGER.warn("Error occured while reading text docoment: " + contentSource.getUrl());
+			LOGGER.warn("Error occurred while reading text document: " + contentSource.getUrl());
 		}
 
 		return new Content[] { createContentObject(stringRead) };

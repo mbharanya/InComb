@@ -33,7 +33,7 @@ public class ThrowableMapper implements ExceptionMapper<Throwable> {
 			return ((WebApplicationException) t).getResponse();
 		}
 
-		LOGGER.error("An error during dispatching occured. Response with status code 500 sent.", t);
+		LOGGER.error("An error during dispatching occurred. Response with status code 500 sent.", t);
 
 		return Response.serverError().status(Status.INTERNAL_SERVER_ERROR).build();
 	}

@@ -154,7 +154,7 @@ public abstract class AXMLParser<T extends RssDocument> implements ContentParser
 			return false;
 
 		} catch (final XMLStreamException e) {
-			LOGGER.error("Exception occured while reading Rss from {}:", contentSource != null ? contentSource.getUrl() : "unknown", methodName, e);
+			LOGGER.error("Exception occurred while reading Rss from {}:", contentSource != null ? contentSource.getUrl() : "unknown", methodName, e);
 			return true;
 		}
 		return true;
