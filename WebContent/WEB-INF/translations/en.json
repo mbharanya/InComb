@@ -231,11 +231,11 @@
 	},
 	
 	"registerText": {
-		"marketingText": "Registriere dich gleich für InComb und erhalte Zugriff auf erweiterte Funktionen. Du kannst Nachrichten kommentieren, bewerten und mit anderen Benutzern folgen (mitfliegen). Auch ist es möglich die Aktionen deiner Freunde auf Schritt und Tritt zu verfolgen und Nachrichten fürs später lesen zu speichern (in my comb).",
-		"advantagesTitel": "Deine Vorteile",
-		"advantage1": "Du bestimmst was dich interessiert",
-		"advantage2": "Erhalte nur News in den Sprachen die du sprichst.",
-		"advantage3": "Suche schnell nach Nachrichten, Quellen und Benutzern",
-		"advantage4": "Sei immer up to date und verpasse nie mehr die wichtigsten News"
+		"marketingText": "Register now for InComb and gain access to more features. You can comment, rate and follow (fly with) other users. Track your friends and mark news to read later (in my comb)-",
+		"advantagesTitel": "Your advantages",
+		"advantage1": "You decide your interests.",
+		"advantage2": "Only see news in languages you speak.",
+		"advantage3": "Quickly search for news, sources and users.",
+		"advantage4": "Always be up to date and never miss important news."
 	}
 }
