@@ -41,7 +41,7 @@ public abstract class AXMLParser<T extends RssDocument> implements ContentParser
 	 */
 	protected String []           		availableSetters;
 
-	//Special Methods for not easy to set propertys
+	//Special Methods for not easy to set properties
 	/**
 	 * Methods for special operations. For example creating a new item object.
 	 */
