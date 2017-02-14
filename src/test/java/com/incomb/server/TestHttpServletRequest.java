@@ -17,11 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
+import javax.servlet.http.*;
 
 /**
  * Simple implementation of {@link HttpServletRequest} for testing purposes.
@@ -52,6 +48,11 @@ public class TestHttpServletRequest implements HttpServletRequest {
 
 	@Override
 	public int getContentLength() {
+		return 0;
+	}
+
+	@Override
+	public long getContentLengthLong() {
 		return 0;
 	}
 
@@ -266,6 +267,11 @@ public class TestHttpServletRequest implements HttpServletRequest {
 	}
 
 	@Override
+	public <T extends HttpUpgradeHandler> T upgrade(Class<T> aClass) throws IOException, ServletException {
+		return null;
+	}
+
+	@Override
 	public Collection<Part> getParts() throws IOException, IllegalStateException, ServletException {
 		return null;
 	}
@@ -313,6 +319,11 @@ public class TestHttpServletRequest implements HttpServletRequest {
 	@Override
 	public HttpSession getSession() {
 		return session;
+	}
+
+	@Override
+	public String changeSessionId() {
+		return null;
 	}
 
 	@Override

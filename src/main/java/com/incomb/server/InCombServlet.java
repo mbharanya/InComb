@@ -140,7 +140,7 @@ public class InCombServlet extends HttpServlet {
 
 			@Override
 			public String getPathInfo() {
-				return super.getPathInfo().matches(".*\\/[^\\/]*\\.[^\\/]*$") ? super.getPathInfo() : "index.html";
+				return super.getPathInfo().matches(".*\\/[^\\/]*\\.[^\\/]*$") ? super.getPathInfo() : "/index.html";
 			}
 		};
 
