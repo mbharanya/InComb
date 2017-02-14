@@ -26,7 +26,7 @@ public class JSoupTest {
 	
 	@Test
 	public void parseNzz() throws IOException{
-		final String url = "http://www.nzz.ch/international/naher-osten-und-nordafrika/al-jazeera-reporter-peter-greste-kommt-frei-1.18473475/";
+		final String url = "http://www.nzz.ch/international/naher-osten-und-nordafrika/al-jazeera-reporter-peter-greste-kommt-frei-1.18473475";
 		final Document doc = Jsoup.connect(url)
 				.userAgent(USER_AGENT)
 				.timeout(15000)
@@ -37,7 +37,7 @@ public class JSoupTest {
 	
 	@Test
 	public void parse20min() throws IOException{
-		final String url = "http://www.20min.ch/schweiz/bern/story/Erdbeben-bringt-Bieler-um-den-Schlaf-30643190/";
+		final String url = "http://www.20min.ch/schweiz/bern/story/Erdbeben-bringt-Bieler-um-den-Schlaf-30643190";
 		final Document doc = Jsoup.connect(url)
 				.userAgent(USER_AGENT)
 				.timeout(15000)
@@ -49,7 +49,7 @@ public class JSoupTest {
 	@Test
 	public void parseAnything() throws IOException{
 
-		final String url = "http://www.pcgameshardware.de/Internet-Thema-34041/News/VPN-schuetzt-nicht-1149669/";
+		final String url = "http://www.pcgameshardware.de/Internet-Thema-34041/News/VPN-schuetzt-nicht-1149669";
 		
 		final Document doc = Jsoup.connect(url)
 				.userAgent(USER_AGENT)
