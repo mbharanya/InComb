@@ -12,6 +12,7 @@ import com.incomb.server.model.Provider;
 import com.incomb.server.model.User;
 import com.incomb.server.model.dao.CombItemDao;
 import com.incomb.server.model.dao.ContentVoteDao;
+import com.incomb.server.services.news.model.util.CssUtil;
 import com.incomb.server.services.providers.model.ProviderModel;
 import com.incomb.server.services.users.combItems.model.CombItemModel;
 import com.incomb.server.services.utils.ContentCommentUtil;
@@ -205,5 +206,13 @@ public class NewsModel extends News {
 	 */
 	public void setVoteAmounts(final VoteAmountModel voteAmounts) {
 		this.voteAmounts = voteAmounts;
+	}
+
+	/**
+	 * Removes the protocol and replaces it with CSS compatible protocol-less url
+	 */
+	@Override
+	public String getImageUrl(){
+		return CssUtil.stripProtocolFromUrl(super.getImageUrl());
 	}
 }
