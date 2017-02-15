@@ -59,7 +59,7 @@ public class RssContentReader implements IContentReader {
 			if (parser.parse()) {
 				doc = parser.getParsedObject();
 
-				if(lastFetch != null && !doc.hasChangedSince(lastFetchDate)) {
+				if(lastFetch != null && doc != null && !doc.hasChangedSince(lastFetchDate)) {
 					LOGGER.debug("RSS content of content source {} hasn't changed since {}.",
 							contentSource.getId(), lastFetch.getFetchTime());
 
