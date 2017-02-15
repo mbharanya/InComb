@@ -1,5 +1,6 @@
 #!/bin/bash
-WEBAPPDIR=/var/lib/tomcat7/webapps
+TOMCATVERSION=tomcat8
+WEBAPPDIR=/var/lib/$TOMCATVERSION/webapps
 WEBAPPNAME=ROOT
 BACKUPDIR=/root/backup/$(date "+%d.%m.%y_%H:%M:%S")
 MYSQL_USER=root
@@ -27,7 +28,7 @@ mkdir -p $BACKUPDIR
 
 #Stop tomcat
 echo "stopping tomcat service..."
-service tomcat7 stop
+service $TOMCATVERSION stop
 echo "done!"
 
 #Dump db
@@ -56,13 +57,14 @@ mv  $BACKUPDIR/indexes $WEBAPPDIR/$WEBAPPNAME/WEB-INF/indexes
 echo "done!"
 
 echo "setting owner and permissions"
-chown tomcat7:tomcat7 -R $WEBAPPDIR/$WEBAPPNAME
+chown $TOMCATVERSION:$TOMCATVERSION -R $WEBAPPDIR/$WEBAPPNAME
 chmod 770 -R $WEBAPPDIR/$WEBAPPNAME
 echo "done!"
 
 echo "restarting tomcat"
-service tomcat7 start
+service $TOMCATVERSION start
 echo "done!"
 
 echo -e "\e[7mRemember to update incomb_config.json as it is not included in the war file\e[0m"
 echo -e "\e[7mRemember to also set the log level to warn\e[0m"
+echo "$WEBAPPDIR/$WEBAPPNAME/WEB-INF/conf/logback.xml"
