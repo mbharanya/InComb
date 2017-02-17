@@ -22,16 +22,4 @@ If you speak German there is a rather complete technical and user documentation 
 1. Use scripts in the `deploy` folder to run InComb in production
 
 ## How can you contribute?
-### Nice to have features / improvements
-* Currently the register site is accessable while logged in (using the url)
-* Read more in "MyComb" doesn't use the reading view and opens a new tab.
-* Change refresh of moment.js, currently it's 1s, could also be 1 min
-* Account delete option in frontend
-* E-mail tld .codes etc does not work
-* Spam protection Comments / Login / Register
-* Register Captcha, Email activation link
-* add <noscript> tag? Content?
-* set max contentLength in parser?
-* 404 default servlet error page
-* My Comb Read View
-* News Open In New Tab
+Take a look at the issues page
