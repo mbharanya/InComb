@@ -1,6 +1,7 @@
 .news-group {
 	margin: 0px 0px 20px 0px;
 	border-top: 6px solid transparent;
+	background-color: #FFFFFF;
 }
 
 .news {
@@ -8,9 +9,9 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 100%;
-	background: rgba(255, 255, 255, 0.75);
 	margin: 0px 0px 1px 0px;
 	overflow: hidden;
+	border-bottom: 2px solid #E0E0E0;
 
 	-webkit-transition: all 300ms ease-in-out;
 	-moz-transition: all 300ms ease-in-out;
@@ -125,7 +126,7 @@ p.news-content {
 	max-height: 0px;
 	overflow: hidden;
 
-	background: #FBF6F2;
+	background: #FFFFFF;
 	width: 100%;
 	padding: 0px 20px;
 
