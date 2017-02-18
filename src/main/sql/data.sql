@@ -4,20 +4,6 @@
 --   Please execute the schema.sql first.  --
 -- --------------------------------------- --
 
--- Test Users --
--- Password is "Abc123-"
-INSERT INTO `user` (`id`, `email`, `username`, `display_name`, `password_hash`, `salt`, `register_date`, `deleted`) VALUES (1, 'test1@notimportant.com', 'test', 'Test1_Display', 'ea433a385df0b821ad1eaf47bfbdd825e5603ef0eca3f58f25c77364c62ebaf5', 'e38b789ce8423c1aaf005daaba115f12', '2014-12-26 22:32:14', 0);
-INSERT INTO `user` (`id`, `email`, `username`, `display_name`, `password_hash`, `salt`, `register_date`, `deleted`) VALUES (2, 'test1@notimportant.com', 'test1', 'Test1_Display', 'ea433a385df0b821ad1eaf47bfbdd825e5603ef0eca3f58f25c77364c62ebaf5', 'e38b789ce8423c1aaf005daaba115f12', '2014-12-26 22:32:14', 0);
-INSERT INTO `user` (`id`, `email`, `username`, `display_name`, `password_hash`, `salt`, `register_date`, `deleted`) VALUES (3, 'test2@notimportant.com', 'test2', 'Test2_Display', 'ea433a385df0b821ad1eaf47bfbdd825e5603ef0eca3f58f25c77364c62ebaf5', 'e38b789ce8423c1aaf005daaba115f12', '2014-12-26 22:32:14', 0);
-INSERT INTO `user` (`id`, `email`, `username`, `display_name`, `password_hash`, `salt`, `register_date`, `deleted`) VALUES (4, 'test3@notimportant.com', 'test3', 'Test3_Display', 'ea433a385df0b821ad1eaf47bfbdd825e5603ef0eca3f58f25c77364c62ebaf5', 'e38b789ce8423c1aaf005daaba115f12', '2014-12-26 22:32:14', 0);
-INSERT INTO `user` (`id`, `email`, `username`, `display_name`, `password_hash`, `salt`, `register_date`, `deleted`) VALUES (5, 'test4@notimportant.com', 'test4', 'Test4_Display', 'ea433a385df0b821ad1eaf47bfbdd825e5603ef0eca3f58f25c77364c62ebaf5', 'e38b789ce8423c1aaf005daaba115f12', '2014-12-26 22:32:14', 0);
-INSERT INTO `user` (`id`, `email`, `username`, `display_name`, `password_hash`, `salt`, `register_date`, `deleted`) VALUES (6, 'test5@notimportant.com', 'test5', 'Test5_Display', 'ea433a385df0b821ad1eaf47bfbdd825e5603ef0eca3f58f25c77364c62ebaf5', 'e38b789ce8423c1aaf005daaba115f12', '2014-12-27 21:47:43', 0);
-INSERT INTO `user` (`id`, `email`, `username`, `display_name`, `password_hash`, `salt`, `register_date`, `deleted`) VALUES (7, 'test6@notimportant.com', 'test6', 'Test6_Display', 'ea433a385df0b821ad1eaf47bfbdd825e5603ef0eca3f58f25c77364c62ebaf5', 'e38b789ce8423c1aaf005daaba115f12', '2014-12-27 21:47:43', 0);
-INSERT INTO `user` (`id`, `email`, `username`, `display_name`, `password_hash`, `salt`, `register_date`, `deleted`) VALUES (8, 'test7@notimportant.com', 'test7', 'Test7_Display', 'ea433a385df0b821ad1eaf47bfbdd825e5603ef0eca3f58f25c77364c62ebaf5', 'e38b789ce8423c1aaf005daaba115f12', '2014-12-26 22:32:14', 0);
-INSERT INTO `user` (`id`, `email`, `username`, `display_name`, `password_hash`, `salt`, `register_date`, `deleted`) VALUES (9, 'test8@notimportant.com', 'test8', 'Test8_Display', 'ea433a385df0b821ad1eaf47bfbdd825e5603ef0eca3f58f25c77364c62ebaf5', 'e38b789ce8423c1aaf005daaba115f12', '2014-12-26 22:32:14', 0);
-INSERT INTO `user` (`id`, `email`, `username`, `display_name`, `password_hash`, `salt`, `register_date`, `deleted`) VALUES (10, 'test9@notimportant.com', 'test9', 'Test9_Display', 'ea433a385df0b821ad1eaf47bfbdd825e5603ef0eca3f58f25c77364c62ebaf5', 'e38b789ce8423c1aaf005daaba115f12', '2014-12-27 21:47:43', 0);
-
-
 -- fly withs --
 INSERT INTO `fly_with` (`user_id`, `fly_with_id`, `fly_with_start_date`) VALUES (1, 2, '2015-01-04 01:26:34');
 INSERT INTO `fly_with` (`user_id`, `fly_with_id`, `fly_with_start_date`) VALUES (1, 3, '2015-01-04 01:26:45');
@@ -43,7 +29,6 @@ INSERT INTO category_preference (user_id, category_id, factor) VALUES(1, 3, 1.0)
 INSERT INTO category_preference (user_id, category_id, factor) VALUES(1, 4, 1.0);
 INSERT INTO category_preference (user_id, category_id, factor) VALUES(1, 5, 1.0);
 INSERT INTO category_preference (user_id, category_id, factor) VALUES(1, 6, 1.0);
-
 
 -- Providers --
 INSERT INTO incomb.provider (id, name, image_path, website) VALUES ( 1, "20 Minuten", "/img/providers/20min.png", "http://www.20min.ch");
