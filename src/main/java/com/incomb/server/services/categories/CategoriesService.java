@@ -42,7 +42,7 @@ public class CategoriesService extends AService {
 			return search(search, amount, localeStr, con);
 		}
 
-		List<Category> categories = null;
+		List<Category> categories;
 
 		final CategoryDao dao = new CategoryDao(con);
 
