@@ -186,7 +186,7 @@ class IndexingThread extends Thread {
 			try {
 				index.commit();
 				conf.afterIndexing(indexData);
-				LOGGER.debug("Finished indexing of {}: {}", conf.getName(), stats.toString());
+				// LOGGER.debug("Finished indexing of {}: {}", conf.getName(), stats.toString());
 			} catch (final IOException e) {
 				index.rollback();
 				LOGGER.error("Can't commit index of {}.", conf.getName(), e);
