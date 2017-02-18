@@ -35,5 +35,9 @@
 	
 	"contentLoader": {
 		"run": true
+	},
+	
+	"auth": {
+		"index": "NvYNuIAJw4fkwzoNnvTpxB4fpiUouJ6xuRZ1UlsIR3Eb5uZYh3jmhU0xpYmZmkVR7kfvYJkSPywlCokQ3sPzesyVrsTzACX5CPUP"
 	}
 }
