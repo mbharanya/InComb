@@ -25,3 +25,8 @@ If you speak German there is a rather complete technical and user documentation 
 
 ## How can you contribute?
 Take a look at the issues page
+
+## FAQ
+- Problem: Categories redirect to a 404
+
+  Solution: Recreate categories index (api/indexes/com.incomb.server.categories.indexing.CategoryIndexType)
