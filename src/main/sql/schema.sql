@@ -269,7 +269,7 @@ DROP TABLE IF EXISTS `incomb`.`provider_exclusion` ;
 CREATE TABLE IF NOT EXISTS `incomb`.`provider_exclusion` (
   `user_id` BIGINT NOT NULL,
   `provider_id` INT NOT NULL,
-  `category_id` INT NULL,
+  `category_id` INT NOT NULL,
   PRIMARY KEY (`user_id`, `provider_id`, `category_id`),
   INDEX `fk_ProviderExclusion_Provider1_idx` (`provider_id` ASC),
   INDEX `fk_ProviderExclusion_Category1_idx` (`category_id` ASC),
