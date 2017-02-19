@@ -342,6 +342,7 @@ header.hidden {
 
 .logo {
 	border: none;
+	margin-left: 25px;
 }
 
 .logo:hover {
