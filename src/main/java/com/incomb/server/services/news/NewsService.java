@@ -87,7 +87,7 @@ public class NewsService extends AService {
 			final ISearchResult<News> newsResult = new NewsDao(con).getNews(params);
 			final List<NewsModel> models = new ArrayList<>();
 
-			// convert news to newsmodels.
+			// convert news to newsModels.
 			for (final News news : newsResult.getResults()) {
 				models.add(new NewsModel(news, params.userId, con));
 			}
