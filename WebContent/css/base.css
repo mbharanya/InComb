@@ -416,6 +416,9 @@ header.hidden {
 .result-group li .text {
 	vertical-align: middle;
 }
+.result-group li .time{
+	float: right;
+}
 
 header input[type=search] {
 	padding: 10px 30px 10px 40px;

@@ -124,7 +124,7 @@
 							<li ng-repeat="news in results.news.results">
 								<a href="{{ 'news' | url:{ id: news.id } }}" title="{{ news.title }}">
 									<h4>{{ news.title }}</h4>
-									<h5>{{ (news.category.nameKey | translate) + " · " + news.provider.name }}</h5>
+									<h5>{{ (news.category.nameKey | translate) + " · " + news.provider.name }} <span class="time" am-time-ago="news.publishDate"></span></h5>
 									<span class="text">{{ (news.text | plain).substring(0, 200) }}</span>
 								</a>
 							</li>
