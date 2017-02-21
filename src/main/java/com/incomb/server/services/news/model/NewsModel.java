@@ -68,7 +68,7 @@ public class NewsModel extends News {
 			final List<CommentModel> comments, final VoteAmountModel voteAmounts, final List<NewsModel> otherNews) {
 
 		super(news.getId(), news.getProviderId(), news.getCategoryId(), news.getTitle(), news.getLocale(),
-				news.getText(), news.getPublishDate(), news.getLink(), news.getImageUrl(),
+				news.getText(), news.getPublishDate(), CssUtil.stripProtocolFromUrl(news.getLink()), news.getImageUrl(),
 				news.getImageWidth(), news.getImageHeight(), news.getNewsGroupId());
 
 		this.category = category;
