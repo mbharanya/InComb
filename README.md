@@ -12,7 +12,7 @@ The user is able to set his/her news preferences in an intuitive and beautiful i
 
 To check out a running version of InComb visit http://incomb.com
 
-## Documenation
+## Documentation
 If you speak German there is a rather complete technical and user documentation in `docs/de`
 
 ## How to run InComb
