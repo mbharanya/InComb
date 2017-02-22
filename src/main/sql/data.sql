@@ -15,13 +15,6 @@ INSERT INTO incomb.category (id, module_id, name_key, image_path) VALUES(4, 1, "
 INSERT INTO incomb.category (id, module_id, name_key, image_path) VALUES(5, 1, "categories.news.digital", "");
 INSERT INTO incomb.category (id, module_id, name_key, image_path) VALUES(6, 1, "categories.news.health", "");
 
-INSERT INTO category_preference (user_id, category_id, factor) VALUES(1, 1, 1.0);
-INSERT INTO category_preference (user_id, category_id, factor) VALUES(1, 2, 1.0);
-INSERT INTO category_preference (user_id, category_id, factor) VALUES(1, 3, 1.0);
-INSERT INTO category_preference (user_id, category_id, factor) VALUES(1, 4, 1.0);
-INSERT INTO category_preference (user_id, category_id, factor) VALUES(1, 5, 1.0);
-INSERT INTO category_preference (user_id, category_id, factor) VALUES(1, 6, 1.0);
-
 -- Providers --
 INSERT INTO incomb.provider (id, name, image_path, website) VALUES ( 1, "20 Minuten", "/img/providers/20min.png", "https://www.20min.ch");
 INSERT INTO incomb.provider (id, name, image_path, website) VALUES ( 2, "Blick", "/img/providers/blick.png", "https://www.blick.ch");
