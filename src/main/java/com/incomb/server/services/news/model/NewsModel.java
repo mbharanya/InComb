@@ -12,7 +12,7 @@ import com.incomb.server.model.Provider;
 import com.incomb.server.model.User;
 import com.incomb.server.model.dao.CombItemDao;
 import com.incomb.server.model.dao.ContentVoteDao;
-import com.incomb.server.services.news.model.util.CssUtil;
+import com.incomb.server.services.news.model.util.UrlUtil;
 import com.incomb.server.services.providers.model.ProviderModel;
 import com.incomb.server.services.users.combItems.model.CombItemModel;
 import com.incomb.server.services.utils.ContentCommentUtil;
@@ -68,7 +68,7 @@ public class NewsModel extends News {
 			final List<CommentModel> comments, final VoteAmountModel voteAmounts, final List<NewsModel> otherNews) {
 
 		super(news.getId(), news.getProviderId(), news.getCategoryId(), news.getTitle(), news.getLocale(),
-				news.getText(), news.getPublishDate(), CssUtil.stripProtocolFromUrl(news.getLink()), news.getImageUrl(),
+				news.getText(), news.getPublishDate(), UrlUtil.stripProtocolFromUrl(news.getLink()), news.getImageUrl(),
 				news.getImageWidth(), news.getImageHeight(), news.getNewsGroupId());
 
 		this.category = category;
@@ -213,6 +213,6 @@ public class NewsModel extends News {
 	 */
 	@Override
 	public String getImageUrl(){
-		return CssUtil.stripProtocolFromUrl(super.getImageUrl());
+		return UrlUtil.stripProtocolFromUrl(super.getImageUrl());
 	}
 }

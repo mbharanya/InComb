@@ -1,12 +1,12 @@
 package com.incomb.server.services.news.model.util;
 
 /**
- * Provides various methods to accommodate CSS quirks and features
+ * Provides various methods to modify URLs
  */
-public class CssUtil {
+public class UrlUtil {
 
     public static final String HTTP_PROTOCOL_REGEX = "^(http://|https://)";
-    public static final String CSS_PROTOCOL_FREE_URL_PREFIX = "//";
+    public static final String PROTOCOL_FREE_URL_PREFIX = "//";
 
     /**
      * @param url to strip the protocol from
@@ -15,7 +15,7 @@ public class CssUtil {
      */
     public static String stripProtocolFromUrl(String url) {
         if (url != null){
-            return url.replaceFirst(HTTP_PROTOCOL_REGEX, CSS_PROTOCOL_FREE_URL_PREFIX);
+            return url.replaceFirst(HTTP_PROTOCOL_REGEX, PROTOCOL_FREE_URL_PREFIX);
         }
         return null;
     }
