@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.GET;
@@ -80,12 +81,8 @@ public class ProvidersService extends AService {
 	 * @return the converted List
 	 */
 	private List<ProviderModel> toModels(final List<Provider> providers) {
-		final List<ProviderModel> models = new ArrayList<>();
-
-		for (final Provider provider : providers) {
-			models.add(new ProviderModel(provider));
-		}
-
-		return models;
+		return providers.stream()
+				.map(ProviderModel::new)
+				.collect(Collectors.toList());
 	}
 }
