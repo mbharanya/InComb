@@ -14,10 +14,16 @@ public class HtmlUtil {
 	 */
 	public static final Pattern BREAK_TAGS_PATTERN = Pattern.compile("<br[^>]*>", Pattern.MULTILINE);
 
+	public static final String HTML_BREAK_TAG = "<br />";
+
 	/**
 	 * Matches all tags (starting with '<', ending with '>').
 	 */
 	public static final Pattern REMOVE_TAGS_PATTERN = Pattern.compile("<[^>]+>", Pattern.MULTILINE);
+
+	private static final Pattern REMOVE_MULTIPLE_LINE_BREAKS_PATTERN = Pattern.compile("\n+", Pattern.MULTILINE);
+
+	public static final String NEW_LINE_CHARACTER = "\n";
 
 	/**
 	 * Private constructor because the class contains only static helper methods.
@@ -40,13 +46,15 @@ public class HtmlUtil {
 
 		if(StringUtils.isNotEmpty(returnValue)) {
 			if(preserveBreaks) {
-				returnValue = BREAK_TAGS_PATTERN.matcher(returnValue).replaceAll("\n");
+				returnValue = BREAK_TAGS_PATTERN.matcher(returnValue).replaceAll(NEW_LINE_CHARACTER);
 			}
 
-			returnValue = REMOVE_TAGS_PATTERN.matcher(returnValue).replaceAll("");
+			returnValue = REMOVE_TAGS_PATTERN.matcher(returnValue).replaceAll("").trim();
+
+			returnValue = REMOVE_MULTIPLE_LINE_BREAKS_PATTERN.matcher(returnValue).replaceAll(NEW_LINE_CHARACTER).trim();
 
 			if(preserveBreaks) {
-				returnValue = returnValue.replace("\n", "<br />");
+				returnValue = returnValue.replace("\n", HTML_BREAK_TAG);
 			}
 		}
 
