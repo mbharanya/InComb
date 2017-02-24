@@ -33,15 +33,15 @@ public class GuardianRssContentParser extends DefaultRssParser<GuardianRssDocume
 			for (final String garbageString : garbageStrings){
 				description = description.replaceAll(garbageString, "");
 			}
-			
-			((GuardianRssItem) parsingElement.getLastItem()).setDescription(description);
+
+			parsingElement.getLastItem().setDescription(description);
 		}
 	}
 
 	@Override
 	protected void setLink(final RssElement element) {
 		if (actualElement.size() != 0 && actualElement.lastElement().equals(ITEM)) {
-			((GuardianRssItem) parsingElement.getLastItem()).setLink((String) element.body);
+			parsingElement.getLastItem().setLink((String) element.body);
 		}
 	}
 	
