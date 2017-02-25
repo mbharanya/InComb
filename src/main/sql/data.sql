@@ -31,7 +31,7 @@ INSERT INTO incomb.provider (id, name, image_path, website) VALUES (12, "Tages-A
 INSERT INTO incomb.provider (id, name, image_path, website, parser_class) VALUES (13, "The Guardian", "/img/providers/theguardian.png", "https://www.theguardian.com/", "com.incomb.server.content.parsing.rss.providerSpecific.GuardianRssContentParser");
 INSERT INTO incomb.provider (id, name, image_path, website) VALUES (14, "The Verge", "/img/providers/theverge.png", "https://www.theverge.com/");
 INSERT INTO incomb.provider (id, name, image_path, website, parser_class) VALUES (15, "Watson", "/img/providers/watson.png", "https://www.watson.ch/", "com.incomb.server.content.parsing.rss.AtomParser");
-INSERT INTO incomb.provider (id, name, image_path, website, parser_class) VALUES (16, 'Hacker News', '/img/providers/hackernews.png', 'https://news.ycombinator.com/');
+INSERT INTO incomb.provider (id, name, image_path, website) VALUES (16, 'Hacker News', '/img/providers/hackernews.png', 'https://news.ycombinator.com/');
 
 -- Content Sources --
 
