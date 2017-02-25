@@ -31,6 +31,7 @@ INSERT INTO incomb.provider (id, name, image_path, website) VALUES (12, "Tages-A
 INSERT INTO incomb.provider (id, name, image_path, website, parser_class) VALUES (13, "The Guardian", "/img/providers/theguardian.png", "https://www.theguardian.com/", "com.incomb.server.content.parsing.rss.providerSpecific.GuardianRssContentParser");
 INSERT INTO incomb.provider (id, name, image_path, website) VALUES (14, "The Verge", "/img/providers/theverge.png", "https://www.theverge.com/");
 INSERT INTO incomb.provider (id, name, image_path, website, parser_class) VALUES (15, "Watson", "/img/providers/watson.png", "https://www.watson.ch/", "com.incomb.server.content.parsing.rss.AtomParser");
+INSERT INTO incomb.provider (id, name, image_path, website, parser_class) VALUES (16, 'Hacker News', '/img/providers/hackernews.png', 'https://news.ycombinator.com/');
 
 -- Content Sources --
 
@@ -122,6 +123,9 @@ INSERT INTO incomb.content_source (id, provider_id, category_id, `interval`, url
 INSERT INTO incomb.content_source (id, provider_id, category_id, `interval`, url, locale) VALUES (57,15, 5, 300, 'https://www.watson.ch/api/1.0/rss/index.xml?tag=Digital%20%26%20Games', "de");
 INSERT INTO incomb.content_source (id, provider_id, category_id, `interval`, url, locale) VALUES (58,15, 6, 300, 'https://www.watson.ch/api/1.0/rss/index.xml?tag=Gesundheit', "de");
 
+-- Hacker News --
+INSERT INTO `incomb`.`content_source` (`id`, `provider_id`, `category_id`, `interval`, `url`, `locale`) VALUES ('59', '16', '5', '600', 'https://news.ycombinator.com/rss', 'en');
+
 -- RSS Feed Content Source --
 INSERT INTO `rss_feed_content_source` (`content_source_id`) VALUES (1);
 INSERT INTO `rss_feed_content_source` (`content_source_id`) VALUES (2);
@@ -181,3 +185,4 @@ INSERT INTO `rss_feed_content_source` (`content_source_id`) VALUES (55);
 INSERT INTO `rss_feed_content_source` (`content_source_id`) VALUES (56);
 INSERT INTO `rss_feed_content_source` (`content_source_id`) VALUES (57);
 INSERT INTO `rss_feed_content_source` (`content_source_id`) VALUES (58);
+INSERT INTO `rss_feed_content_source` (`content_source_id`) VALUES (59);
