@@ -1,0 +1,29 @@
+version: "3"
+services:
+  incomb:
+    image: mbharanya/incomb:latest
+    container_name: incomb
+    ports:
+      - 8888:8080/tcp
+    volumes:
+      - ./incomb_config.json:/usr/local/tomcat/webapps/ROOT/WEB-INF/conf/incomb_config.json
+      - ./indexes:/usr/local/tomcat/webapps/ROOT/WEB-INF/indexes
+    restart: unless-stopped
+    labels:
+      - traefik.http.routers.new_incomb_http.rule=Host(`new.incomb.com`)
+      - traefik.http.routers.new_incomb_http.middlewares=http-to-https
+      - traefik.http.routers.new_incomb_https.rule=Host(`new.incomb.com`)
+      - traefik.http.routers.new_incomb_https.tls=true
+      - traefik.http.routers.new_incomb_https.tls.certresolver=lets_encrypt
+      - traefik.http.services.new_incomb.loadbalancer.server.port=8080
+  incomb_mysql:
+    image: mysql:5.7
+    container_name: incomb_mysql
+    ports:
+      - 3307:3306/tcp
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+      - ./mysql/conf:/etc/mysql/conf.d/
+    environment:
+      MYSQL_ROOT_PASSWORD: <insert mysql pw here>
+    restart: unless-stopped
