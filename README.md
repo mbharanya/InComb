@@ -16,7 +16,7 @@ To check out a running version of InComb visit http://incomb.com
 If you speak German there is a rather complete technical and user documentation in `docs/de`
 
 ## How to run InComb
-## Docker (recommended)
+### Docker (recommended)
 1. Pull the docker image from `mbharanya/incomb:latest`, or build it using `docker/Dockerfile`
 2. Check out `docker-compose.yaml` for setting up the database
 1. Expose the file `incomb_config.json` and a folder `indexes` to apply your settings (check docker volumes)
