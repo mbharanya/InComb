@@ -469,3 +469,4 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- Indices
 alter table incomb.content add index (title);
 alter table incomb.content add index (publish_date);
+alter table incomb.news add index (link(500));
